@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+<!--   <record id="thuoc_form_view" model="ir.ui.view">-->
+<!--            <field name="name">thuoc.form.view</field>-->
+<!--            <field name="model">nhom.hang.hoa</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form>-->
+<!--                    <sheet>-->
+<!--                        <div class="oe_title">-->
+<!--                            <label for="name" string="Thuốc" class="oe_edit_only"/>-->
+<!--                            <h1><field name="name"/></h1>-->
+
+<!--                        </div>-->
+<!--                            <group>-->
+<!--                                <field name="check"/>-->
+<!--                            </group>-->
+<!--                        <group string="Images">-->
+<!--										<field name="image" string="Hình ảnh" widget="image"/>-->
+<!--									</group>-->
+
+<!--                    </sheet>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+         <record id="nhomhanghoa_tree_view" model="ir.ui.view">
+             <field name="model">nhom.hang.hoa</field>
+            <field name="name">thuoc.tree.view</field>
+            <field name="arch" type="xml">
+                <tree string="Nhóm hàng hóa" default_order="create_date desc">
+                    <field name="code"/>
+                    <field name="name"/>
+<!--                    <field name="status" invisible='1'/>-->
+                    <field name="status" invisible='1' />
+<!--                    <field name="test" string="Trạng thái">-->
+<!--                        <button name="confirm" string="Confirm" readonly="True"  class="oe_inline oe_stat_button" icon="/netyte/static/status.png" attrs="{'invisible':[('status','=','ngungkinhdoanh')]}" > </button>-->
+<!--                    </field>-->
+
+                    <button  string="Confirm" readonly="True"  class="oe_inline oe_stat_button" icon="/netyte/static/status.png" attrs="{'invisible':[('status','=','ngungkinhdoanh')]}" > </button>
+                    <field name="description" />
+
+                </tree>
+
+            </field>
+        </record>
+
+
+
+        <record id="action_nhomhanghoa" model="ir.actions.act_window">
+            <field name="name">Nhóm hàng hóa</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="target">current</field>
+            <field name="res_model">nhom.hang.hoa</field>
+
+        </record>
+
+
+         <menuitem id="menu_danhmuc" name="Danh mục"
+            sequence="10"
+            groups="base.group_user"
+            action="action_nhomhanghoa"
+        />
+
+        <menuitem id="menu_root"
+            name="Netyte"
+            sequence="10"
+        />
+
+
+
+    </data>
+
+</odoo>
+

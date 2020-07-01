@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!--        <record model="ir.module.category" id="module_category_netype" >-->
+<!--            <field name="name">Quản lý Netype</field>-->
+<!--            <field name="description">Quản lý Netype</field>-->
+<!--            <field name="sequence">8</field>-->
+<!--        </record>-->
+
+
+<!--        <record id="sieu_admin" model="res.groups">-->
+<!--            <field name="name">Siêu admin</field>-->
+<!--            <field name="category_id" ref="module_category_netype"/>-->
+<!--            <field name="implied_ids" eval="[(4, ref('quan_ly'))]"/>-->
+<!--        </record>-->
+
+<!--        <record id="quan_ly" model="res.groups">-->
+<!--            <field name="name">Quản lý</field>-->
+<!--            <field name="category_id" ref="module_category_netype"/>-->
+<!--        </record>-->
+
+
+</odoo>
+
