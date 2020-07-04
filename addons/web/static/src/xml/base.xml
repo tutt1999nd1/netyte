@@ -262,24 +262,6 @@
     </div>
 </div>
 
-<t t-name="ListView.buttons">
-    <div class="o_list_buttons" role="toolbar" aria-label="Main actions">
-        <button type="button" class="btn btn-primary o_list_button_save" accesskey="s">
-            Save
-        </button>
-        <button type="button" class="btn btn-secondary o_list_button_discard" accesskey="j">
-            Discard
-        </button>
-        <t t-if="widget.is_action_enabled('create')">
-            <button type="button" class="btn btn-primary o_list_button_add" accesskey="c">
-                Create
-            </button>
-        </t>
-        <t t-if="widget.is_action_enabled('export_xlsx')">
-            <button type="button" class="btn btn-secondary fa fa-download o_list_export_xlsx" title="Export All"/>
-        </t>
-    </div>
-</t>
 
 <t t-name="ListView.confirmModal">
     <main role="alert">
@@ -308,7 +290,7 @@
         </div>
     </main>
 </t>
-
+<!--chỗ cần sửa-->
 <t t-name="FormView.buttons">
     <div class="o_form_buttons_view" role="toolbar" aria-label="Main actions">
         <button t-if="widget.is_action_enabled('edit')" type="button"
@@ -1563,6 +1545,24 @@
             </t>
         </span>
     </button>
+</t>
+<t t-name="ListView.buttons">
+    <div class="o_list_buttons" role="toolbar">
+        <button type="button" class="btn btn-primary o_list_button_save" accesskey="s">
+            Save
+        </button>
+        <button type="button" class="btn btn-secondary o_list_button_discard" accesskey="j">
+            Discard
+        </button>
+        <t t-if="widget.is_action_enabled('create')">
+            <button type="button" class="btn btn-primary o_list_button_add" accesskey="c">
+                Create
+            </button>
+        </t>
+        <t t-if="widget.is_action_enabled('export_xlsx')">
+            <button type="button" class="btn btn-secondary fa fa-download o_list_export_xlsx" title="Export All"/>
+        </t>
+    </div>
 </t>
 
 <t t-name="FieldColor">

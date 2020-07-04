@@ -29,15 +29,14 @@
             <field name="name">thuoc.tree.view</field>
             <field name="arch" type="xml">
                 <tree string="Nhóm hàng hóa" default_order="create_date desc">
-                    <field name="code"/>
-                    <field name="name"/>
+                    <field name="code" optional="show"/>
+                    <field name="name" optional="show"/>
 <!--                    <field name="status" invisible='1'/>-->
-                    <field name="status" invisible='1' />
-<!--                    <field name="test" string="Trạng thái">-->
+                    <field name="status" optional="show" />
+                    
 <!--                        <button name="confirm" string="Confirm" readonly="True"  class="oe_inline oe_stat_button" icon="/netyte/static/status.png" attrs="{'invisible':[('status','=','ngungkinhdoanh')]}" > </button>-->
 <!--                    </field>-->
 
-                    <button  string="Confirm" readonly="True"  class="oe_inline oe_stat_button" icon="/netyte/static/status.png" attrs="{'invisible':[('status','=','ngungkinhdoanh')]}" > </button>
                     <field name="description" />
 
                 </tree>
@@ -54,6 +53,18 @@
             <field name="res_model">nhom.hang.hoa</field>
 
         </record>
+         <record id="search_nhomhanghoa" model="ir.ui.view">
+              <field name="model">nhom.hang.hoa</field>
+              <field name="arch" type="xml">
+                <search string="Nhóm hàng hóa">
+                    <field name="name" string="Nhóm hàng hóa"/>
+                    <field name="code" string="Mã nhóm"/>
+                     <field name="status" string="Trạng thái"/>
+                </search>
+              </field>
+    </record>
+
+
 
 
          <menuitem id="menu_danhmuc" name="Danh mục"
