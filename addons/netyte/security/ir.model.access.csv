@@ -1,4 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_nhom_hang_hoa,access_nhom_hang_hoa,model_nhom_hang_hoa,,1,1,1,1
+access_hang_hoa,access_hang_hoa,model_hang_hoa,,1,1,1,1
+
+
+
 
 

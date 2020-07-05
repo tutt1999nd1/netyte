@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+         <record id="hanghoa_tree_view" model="ir.ui.view">
+             <field name="model">hang.hoa</field>
+            <field name="name">hanghoa.tree.view</field>
+            <field name="arch" type="xml">
+                <tree string="Hàng hóa" default_order="create_date desc">
+                    <field name="product_no" optional="show"/>
+                    <field name="product_name" optional="show"/>
+                    <field name="group" optional="show" />
+                    <field name="manuafacturer" optional="show" />
+                    <field name="origin_country" optional="show" />
+                    <field name="sold_price" optional="show" />
+                    <field name="sell_in_store" optional="show"></field>
+
+
+
+                </tree>
+
+            </field>
+        </record>
+
+
+        <record id="action_hanghoa" model="ir.actions.act_window">
+            <field name="name">Hàng hóa</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="target">current</field>
+            <field name="res_model">hang.hoa</field>
+
+        </record>
+
+<!--&lt;!&ndash;        &ndash;&gt;-->
+         <menuitem id="menu_hanghoa" name="Hàng hóa"
+            sequence="10"
+            groups="base.group_user"
+            action="action_hanghoa"
+              parent="menu_danhmuc"
+        />
+
+
+
+
+
+    </data>
+
+</odoo>
+

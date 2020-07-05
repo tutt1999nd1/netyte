@@ -1,4 +1,4 @@
-from odoo import api, fields, models, tools, _
+from odoo import api, fields, models, tools
 class Nhom_hang_hoa(models.Model):
     _name = "nhom.hang.hoa"
 

@@ -70,10 +70,18 @@
          <menuitem id="menu_danhmuc" name="Danh mục"
             sequence="10"
             groups="base.group_user"
+            parent="menu_root"
+        />
+         <menuitem id="menu_nhomhanghoa" name="Nhóm hàng hóa"
+            sequence="10"
+            groups="base.group_user"
             action="action_nhomhanghoa"
+            parent="menu_danhmuc"
         />
 
+
         <menuitem id="menu_root"
+            groups="base.group_user"
             name="Netyte"
             sequence="10"
         />
