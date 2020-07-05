@@ -30,12 +30,11 @@
 
         </record>
 
-<!--&lt;!&ndash;        &ndash;&gt;-->
          <menuitem id="menu_hanghoa" name="Hàng hóa"
             sequence="10"
             groups="base.group_user"
             action="action_hanghoa"
-              parent="menu_danhmuc"
+            parent="menu_danhmuc"
         />
 
 
