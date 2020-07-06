@@ -1,23 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-         <record id="hanghoa_tree_view" model="ir.ui.view">
-             <field name="model">hang.hoa</field>
+        <record id="hanghoa_tree_view" model="ir.ui.view">
+            <field name="model">hang.hoa</field>
             <field name="name">hanghoa.tree.view</field>
             <field name="arch" type="xml">
                 <tree string="Hàng hóa" default_order="create_date desc">
                     <field name="product_no" optional="show"/>
                     <field name="product_name" optional="show"/>
-                    <field name="group" optional="show" />
-                    <field name="manuafacturer" optional="show" />
-                    <field name="origin_country" optional="show" />
-                    <field name="sold_price" optional="show" />
+                    <field name="group" optional="show"/>
+                    <field name="manuafacturer" optional="show"/>
+                    <field name="origin_country" optional="show"/>
+                    <field name="sold_price" optional="show"/>
                     <field name="sell_in_store" optional="show"></field>
-
 
 
                 </tree>
 
+            </field>
+        </record>
+
+        <record id="hanghoa_form_view" model="ir.ui.view">
+            <field name="name">hanghoa.form.view</field>
+            <field name="model">hang.hoa</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <notebook>
+                            <page name="information" string="Thông tin">
+                                <div class="oe_title">
+<!--                                    <field name="product_no" placeholder="Mã hàng"/>-->
+                                    <label for="product_name" string="Tên hàng"/>
+                                    <h1>
+                                        <field name="product_name" placeholder="Tên hàng"/>
+                                    </h1>
+                                </div>
+                                <group>
+                                    <group>
+                                        <field name="group"/>
+                                        <field name="manuafacturer"/>
+                                        <field name="origin_country"/>
+                                        <field name="on_hand"/>
+                                        <field name="position"/>
+                                    </group>
+                                    <group>
+                                        <field name="cost_price"/>
+                                        <field name="sold_price"/>
+                                        <field name="weight"/>
+                                        <field name="packing_spec"/>
+                                        <field name="sell_in_store"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="description_details" string="Mô tả chi tiết">
+
+                            </page>
+                             <page name="thanhphan" string="Thành phần">
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
             </field>
         </record>
 
@@ -30,15 +73,12 @@
 
         </record>
 
-         <menuitem id="menu_hanghoa" name="Hàng hóa"
-            sequence="10"
-            groups="base.group_user"
-            action="action_hanghoa"
-            parent="menu_danhmuc"
+        <menuitem id="menu_hanghoa" name="Hàng hóa"
+                  sequence="10"
+                  groups="base.group_user"
+                  action="action_hanghoa"
+                  parent="menu_danhmuc"
         />
-
-
-
 
 
     </data>

@@ -6,7 +6,7 @@ class Hang_hoa(models.Model):
     manuafacturer = fields.Char('Hãng sản xuất')
     origin_country = fields.Char('Nước sản suất')
     on_hand = fields.Integer("Số lượng tồn kho")
-    position = fields.Char("vỊ trí hàng hóa")
+    position = fields.Char("Vị trí hàng hóa")
     cost_price = fields.Float("Số vốn")
     sold_price = fields.Float("Giá bán")
     weight = fields.Float("Trọng lượng")

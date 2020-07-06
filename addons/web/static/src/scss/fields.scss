@@ -19,6 +19,7 @@
 // Numbers
 .o_field_number {
     white-space: nowrap;
+    text-align: end;
 }
 
 //------------------------------------------------------------------------------
@@ -29,7 +30,7 @@
     // Default display and alignment of widget and internal <input/>
     &, input.o_input {
         display: inline-block;
-        text-align: inherit;
+        //text-align: inherit;
     }
 
     // Block fields
