@@ -14,8 +14,6 @@ class Hang_hoa(models.Model):
     sell_in_store = fields.Boolean("Bán trực tiếp")
     group = fields.Many2one('nhom.hang.hoa', string='Cấp cha')
     product_no = fields.Char(string='Mã hàng hóa',required=True,copy=False,readonly=True,index=True,default='New')
-    description = fields.Text("Mô tả")
-    # description_detail = fields.Text("Mô tả chi tiết")
 
     @api.model
     def create(self, vals):

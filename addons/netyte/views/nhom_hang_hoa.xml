@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-    <record id="nhomhanghoa_form_view" model="ir.ui.view">
-            <field name="model">nhom.hang.hoa</field>
-            <field name="name">thuoc.form.view</field>
-            <field name="arch" type="xml">
-                <form>
-                    <sheet>
-                        <div>
-                            <label for="code" string="Mã hàng hóa"/>
-                            <h1><field name="code" placeholder="Mã hàng hóa"/></h1>
-                            <label for="name"/>
-                            <h3><field name="name"/></h3>
-                            <label for="parent_id"/>
-                            <h3><field name="parent_id"/></h3>
-                            <label for="status"/>
-                            <h3><field name="status" options="{'style-inline': true}"/></h3>
-                            <label for="description"/>
-                            <h3><field name="description" widget="html" options="{'style-inline': true}"/></h3>
 
-                        </div>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+<!--   <record id="thuoc_form_view" model="ir.ui.view">-->
+<!--            <field name="name">thuoc.form.view</field>-->
+<!--            <field name="model">nhom.hang.hoa</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form>-->
+<!--                    <sheet>-->
+<!--                        <div class="oe_title">-->
+<!--                            <label for="name" string="Thuốc" class="oe_edit_only"/>-->
+<!--                            <h1><field name="name"/></h1>-->
+
+<!--                        </div>-->
+<!--                            <group>-->
+<!--                                <field name="check"/>-->
+<!--                            </group>-->
+<!--                        <group string="Images">-->
+<!--										<field name="image" string="Hình ảnh" widget="image"/>-->
+<!--									</group>-->
+
+<!--                    </sheet>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
          <record id="nhomhanghoa_tree_view" model="ir.ui.view">
              <field name="model">nhom.hang.hoa</field>
             <field name="name">thuoc.tree.view</field>
@@ -71,7 +71,6 @@
             sequence="10"
             groups="base.group_user"
             parent="menu_root"
-
         />
          <menuitem id="menu_nhomhanghoa" name="Nhóm hàng hóa"
             sequence="10"
@@ -92,4 +91,3 @@
     </data>
 
 </odoo>
-
