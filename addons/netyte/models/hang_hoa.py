@@ -14,6 +14,14 @@ class Hang_hoa(models.Model):
     origin_country = fields.Many2one("dat.nuoc",string = "Xuất sứ")
     manuafacturer = fields.Many2one("nha.san.xuat",string = "Nhà sản xuất")
     don_vi = fields.Many2one("don.vi", string = "Đơn vị")
+
+    # type = fields.Selection([
+    #     ('hanghoa', 'Hàng hóa'),
+    #     ('thuoc', 'Thuốc'),
+    #     ('nhomhanghoa','Combo hàng hóa')
+    # ], string='Thể loại', default='hanghoa')
+    description = fields.Char('Mô tả')
+
     @api.model
     def create(self, vals):
         if vals.get('product_no', '/') == '/':
