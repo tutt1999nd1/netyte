@@ -37,8 +37,7 @@
                                 </div>
                                 <group>
                                     <group>
-                                        <field name="type"/>
-                                        <field name="group" attrs="{'invisible':[('type','=','hanghoa')]}"/>
+                                        <field name="group"/>
                                         <field name="manuafacturer"/>
                                         <field name="origin_country"/>
                                         <field name="on_hand"/>
@@ -54,11 +53,14 @@
                                 </group>
                             </page>
                             <page name="description_details" string="Mô tả chi tiết">
-                                <field name="description" widget="html"/>
+                                <group>
+<!--                                    <field name="description"/>-->
+                                    <field name="description" widget="html"/>
+                                </group>
                             </page>
-                             <page name="thanhphan" string="Thành phần">
+<!--                             <page name="thanhphan" string="Thành phần">-->
 
-                            </page>
+<!--                            </page>-->
                         </notebook>
                     </sheet>
                 </form>

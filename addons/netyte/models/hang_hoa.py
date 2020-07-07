@@ -9,19 +9,14 @@ class Hang_hoa(models.Model):
     weight = fields.Float("Trọng lượng")
     packing_spec = fields.Char("Quy cách đóng gói",size = 50)
     sell_in_store = fields.Boolean("Bán trực tiếp")
+    group = fields.Many2one('nhom.hang.hoa', string='Cấp cha')
+    product_no = fields.Char(string='Mã hàng hóa',required=True,copy=False,readonly=True,index=True,default='New')
     group = fields.Many2one('nhom.hang.hoa', string = 'Nhóm hàng hóa')
     product_no = fields.Char(string = 'Mã hàng hóa',required = True,copy = False,readonly = True,index = True,default = 'New')
     origin_country = fields.Many2one("dat.nuoc",string = "Xuất sứ")
     manuafacturer = fields.Many2one("nha.san.xuat",string = "Nhà sản xuất")
     don_vi = fields.Many2one("don.vi", string = "Đơn vị")
-
-    # type = fields.Selection([
-    #     ('hanghoa', 'Hàng hóa'),
-    #     ('thuoc', 'Thuốc'),
-    #     ('nhomhanghoa','Combo hàng hóa')
-    # ], string='Thể loại', default='hanghoa')
-    description = fields.Char('Mô tả')
-
+    description = fields.Text("Mô tả")
     @api.model
     def create(self, vals):
         if vals.get('product_no', '/') == '/':
