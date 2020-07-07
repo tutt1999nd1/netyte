@@ -7,14 +7,11 @@
             <field name="arch" type="xml">
                 <tree string="Hàng hóa" default_order="create_date desc">
                     <field name="product_no" optional="show"/>
-                    <field name="product_name" optional="show"/>
-                    <field name="group" optional="show"/>
-                    <field name="manuafacturer" optional="show"/>
-                    <field name="origin_country" optional="show"/>
+                    <field name="name" optional="show"/>
+                    <field name="type" optional="show"/>
                     <field name="sold_price" optional="show"/>
-                    <field name="sell_in_store" optional="show"></field>
-
-
+                    <field name="cost_price" optional="show" />
+                    <field name="sold_price_combo" optional="show"/>
                 </tree>
 
             </field>
@@ -28,39 +25,49 @@
                     <sheet>
                         <notebook>
                             <page name="information" string="Thông tin">
-                                <div class="oe_title">
-<!--                                    <field name="product_no" placeholder="Mã hàng"/>-->
-                                    <label for="product_name" string="Tên hàng"/>
-                                    <h1>
-                                        <field name="product_name" placeholder="Tên hàng"/>
-                                    </h1>
-                                </div>
+
+
+                                <group>
+                                    <field name="name" />
+                                    <field name="type"/>
+                                </group>
                                 <group>
                                     <group>
                                         <field name="group"/>
-                                        <field name="manuafacturer"/>
-                                        <field name="origin_country"/>
-                                        <field name="on_hand"/>
+                                        <field name="manuafacturer" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
+                                        <field name="origin_country" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
+                                        <field name="on_hand" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
                                         <field name="position"/>
                                     </group>
                                     <group>
-                                        <field name="cost_price"/>
+                                        <field name="cost_price" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
                                         <field name="sold_price"/>
                                         <field name="weight"/>
-                                        <field name="packing_spec"/>
+                                        <field name="packing_spec" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
                                         <field name="sell_in_store"/>
+                                    </group>
+                                </group>
+                                <group attrs="{'invisible':[('type','!=','thuoc')]}">
+                                    <group>
+                                        <field name="reg_number"/>
+                                        <field name="active_ingredients"/>
+                                        <field name="ham_luong"/>
+                                        <field name="packing_spec"/>
+                                        <field name="manuafacturer"/>
+                                        <field name="origin_country"/>
                                     </group>
                                 </group>
                             </page>
                             <page name="description_details" string="Mô tả chi tiết">
                                 <group>
-<!--                                    <field name="description"/>-->
                                     <field name="description" widget="html"/>
                                 </group>
                             </page>
-<!--                             <page name="thanhphan" string="Thành phần">-->
-
-<!--                            </page>-->
+                             <page name="thanhphan" string="Thành phần"  attrs="{'invisible':[('type','!=','combo')]}" >
+                                <group>
+                                    <field name="components"/>
+                                </group>
+                            </page>
                         </notebook>
                     </sheet>
                 </form>
