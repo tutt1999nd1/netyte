@@ -42,11 +42,17 @@ class Hang_hoa(models.Model):
             vals['product_no'] = self.env['ir.sequence'].next_by_code('code.hanghoa') or '/'
         return super(Hang_hoa, self).create(vals)
 
-    @api.depends('sold_price_combo')
+    @api.onchange('components')
     def _sum_price(self):
+
         for record in self:
-            for record2 in record.components:
-                record.sold_price_combo= record.sold_price_combo + record2.sold_price
+            record.sold_price_combo=0
+            if not record.components:
+                record.sold_price_combo = 0
+            if record.components:
+                for record2 in record.components:
+                    record.sold_price_combo= record.sold_price_combo + record2.sold_price
+                record.sold_price = record.sold_price_combo
 
 class Dat_nuoc(models.Model):
     _name = "dat.nuoc"
