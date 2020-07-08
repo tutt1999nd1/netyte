@@ -44,7 +44,14 @@
                 t-att-data-menu-xmlid="menu.xmlid"
                 t-attf-class="#{inNavbar ? '' : 'dropdown-item '}o_menu_entry_lvl_#{depth}"
                 data-toggle="collapse" data-target="#o_navbar_collapse.in">
-                <span><t t-esc="menu.name"/></span>
+<!--                <span><t t-esc="menu.name"/></span>-->
+
+                <t t-if="menu.id == 92">
+                    <span><i class="fa fa-suitcase"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                <t t-if="menu.id == 93">
+                    <span><i class="fa fa-medkit"></i> <t t-esc="menu.name"/> </span>
+                </t>
             </a>
         </t>
         <li t-if="inNavbar">
@@ -56,7 +63,13 @@
     </t>
     <t t-else="">
         <div t-attf-class="dropdown-header o_menu_header_lvl_#{depth}">
-            <span><t t-esc="menu.name"/></span>
+             <t t-if="menu.id == 92">
+                    <span><i class="fa fa-bars"></i> <t t-esc="menu.name"/></span>
+                </t>
+            <t t-if="menu.id == 93">
+                    <span><i class="fa fa-medkit"></i> <t t-esc="menu.name"/> </span>
+            </t>
+
         </div>
         <t t-foreach="menu.children" t-as="menu">
             <t t-call="Menu.link"/>
@@ -78,7 +91,13 @@
                 <t t-else="">
                     <li>
                         <a href="#" class="dropdown-toggle o-no-caret o_menu_header_lvl_1" t-att-data-menu-xmlid="second_level_menu.xmlid" data-toggle="dropdown" data-display="static" role="button" aria-expanded="false">
-                            <t t-esc="second_level_menu.name"/>
+<!--                            <t t-esc="second_level_menu.name"/>-->
+                             <t t-if="second_level_menu.id == 91">
+                    <span><i class="fa fa-plus-square"></i> <t t-esc="second_level_menu.name"/></span>
+                </t>
+                <t t-else="">
+                    <span><t t-esc="second_level_menu.name"/> <t t-esc="second_level_menu.id"/></span>
+                </t>
                         </a>
                         <div class="dropdown-menu" role="menu">
                             <t t-foreach="second_level_menu.children" t-as="third_level_menu">
