@@ -15,15 +15,15 @@
                                 <field name="code" placeholder="Mã hàng hóa"/>
 
                                 <field name="name"/>
-
-
-
-                                <field name="description" widget="html" options="{'style-inline': true}"/>
                             </group>
                             <group>
                                 <field name="parent_id"/>
                                 <field name="status" options="{'style-inline': true}"/>
                             </group>
+
+                            </group>
+                            <group>
+                                     <field name="description" widget="html" options="{'style-inline': true}"/>
                             </group>
 
                         </div>
