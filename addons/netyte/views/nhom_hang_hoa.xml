@@ -8,17 +8,23 @@
                 <form>
                     <sheet>
                         <div>
-                            <label for="code" string="Mã hàng hóa"/>
+<!--                            <label for="code" string="Mã hàng hóa"/>-->
 <!--                            <i class="fa fa-info"></i>-->
-                            <h1><field name="code" placeholder="Mã hàng hóa"/></h1>
-                            <label for="name"/>
-                            <h3><field name="name"/></h3>
-                            <label for="parent_id"/>
-                            <h3><field name="parent_id"/></h3>
-                            <label for="status"/>
-                            <h3><field name="status" options="{'style-inline': true}"/></h3>
-                            <label for="description"/>
-                            <h3><field name="description" widget="html" options="{'style-inline': true}"/></h3>
+                            <group>
+                            <group>
+                                <field name="code" placeholder="Mã hàng hóa"/>
+
+                                <field name="name"/>
+
+
+
+                                <field name="description" widget="html" options="{'style-inline': true}"/>
+                            </group>
+                            <group>
+                                <field name="parent_id"/>
+                                <field name="status" options="{'style-inline': true}"/>
+                            </group>
+                            </group>
 
                         </div>
                     </sheet>
@@ -38,7 +44,7 @@
 <!--                        <button name="confirm" string="Confirm" readonly="True"  class="oe_inline oe_stat_button" icon="/netyte/static/status.png" attrs="{'invisible':[('status','=','ngungkinhdoanh')]}" > </button>-->
 <!--                    </field>-->
 
-                    <field name="description" />
+<!--                    <field name="description" />-->
 
                 </tree>
 
