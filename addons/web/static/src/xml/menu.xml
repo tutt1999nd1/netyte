@@ -46,10 +46,10 @@
                 data-toggle="collapse" data-target="#o_navbar_collapse.in">
 <!--                <span><t t-esc="menu.name"/></span>-->
 
-                <t t-if="menu.id == 92">
+                <t t-if="menu.xmlid === 'netyte.menu_nhomhanghoa'">
                     <span><i class="fa fa-suitcase"></i> <t t-esc="menu.name"/> </span>
                 </t>
-                <t t-if="menu.id == 93">
+                <t t-if="menu.xmlid ==='netyte.menu_hanghoa'">
                     <span><i class="fa fa-medkit"></i> <t t-esc="menu.name"/> </span>
                 </t>
             </a>
@@ -63,10 +63,10 @@
     </t>
     <t t-else="">
         <div t-attf-class="dropdown-header o_menu_header_lvl_#{depth}">
-             <t t-if="menu.id == 92">
+             <t t-if="menu.xmlid === 'netyte.menu_nhomhanghoa'">
                     <span><i class="fa fa-bars"></i> <t t-esc="menu.name"/></span>
                 </t>
-            <t t-if="menu.id == 93">
+            <t t-if="menu.xmlid === 'netyte.menu_hanghoa'">
                     <span><i class="fa fa-medkit"></i> <t t-esc="menu.name"/> </span>
             </t>
 
@@ -92,7 +92,7 @@
                     <li>
                         <a href="#" class="dropdown-toggle o-no-caret o_menu_header_lvl_1" t-att-data-menu-xmlid="second_level_menu.xmlid" data-toggle="dropdown" data-display="static" role="button" aria-expanded="false">
 <!--                            <t t-esc="second_level_menu.name"/>-->
-                             <t t-if="second_level_menu.id == 91">
+                             <t t-if="second_level_menu.xmlid  ==='netyte.menu_danhmuc' ">
                     <span><i class="fa fa-plus-square"></i> <t t-esc="second_level_menu.name"/></span>
                 </t>
                 <t t-else="">

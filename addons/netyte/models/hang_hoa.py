@@ -22,6 +22,7 @@ class Hang_hoa(models.Model):
     reg_number = fields.Char("Số đăng ký",size=12)
     active_ingredients = fields.Char("Hoạt chất",size = 200)
     ham_luong = fields.Char("Hàm lượng",size = 200)
+    thuoc = fields.Many2one('thuoc', string ='Tên thuốc')
 
     type = fields.Selection([
         ('hanghoa', 'Hàng hóa'),
@@ -44,7 +45,6 @@ class Hang_hoa(models.Model):
 
     @api.onchange('components')
     def _sum_price(self):
-
         for record in self:
             record.sold_price_combo=0
             if not record.components:
@@ -53,6 +53,15 @@ class Hang_hoa(models.Model):
                 for record2 in record.components:
                     record.sold_price_combo= record.sold_price_combo + record2.sold_price
                 record.sold_price = record.sold_price_combo
+
+    @api.onchange('thuoc')
+    def _change_info_thuoc(self):
+        self.reg_number=self.thuoc.reg_number
+        self.active_ingredients=self.thuoc.active_ingredients
+        self.ham_luong=self.thuoc.ham_luong
+        self.packing_spec=self.thuoc.packing_spec
+        self.manuafacturer=self.thuoc.manuafacturer
+        self.origin_country=self.thuoc.origin_country
 
 class Dat_nuoc(models.Model):
     _name = "dat.nuoc"
@@ -68,6 +77,12 @@ class Don_vi(models.Model):
     _name = "don.vi"
     name = fields.Char("Đơn vị")
 
-
-
-
+class Thuoc(models.Model):
+    _name = "thuoc"
+    name = fields.Char("Tên thuốc")
+    reg_number = fields.Char("Số đăng ký", size=12)
+    active_ingredients = fields.Char("Hoạt chất", size=200)
+    ham_luong = fields.Char("Hàm lượng", size=200)
+    origin_country = fields.Many2one("dat.nuoc", string="Nước sản xuất")
+    manuafacturer = fields.Many2one("nha.san.xuat", string="Hãng sản xuất")
+    packing_spec = fields.Char("Quy cách đóng gói",size = 50)
