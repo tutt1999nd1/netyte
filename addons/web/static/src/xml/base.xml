@@ -1083,8 +1083,10 @@
     <button t-if="widget.presentedFields.length !== 0" type="button" class="dropdown-item o_generator_menu o_add_custom_group" aria-expanded="false">Add Custom Group</button>
     <div t-if="widget.generatorMenuIsOpen" class="dropdown-item-text o_generator_menu">
         <select class="w-auto o_input o_group_selector o_add_group">
-            <t t-foreach="widget.presentedFields" t-as="field">
-                <option t-att-value="field.name"><t t-esc="field.string"/></option>
+            <t  t-foreach="widget.presentedFields" t-as="field">
+                <t t-if="field.name !=='create_uid' and field.name !=='create_date' and field.name !=='write_uid' and field.name !=='write_date'">
+                <option  t-att-value="field.name"><t t-esc="field.string"/> </option>
+             </t>
             </t>
         </select>
     </div>

@@ -96,7 +96,7 @@
                     <span><i class="fa fa-plus-square"></i> <t t-esc="second_level_menu.name"/></span>
                 </t>
                 <t t-else="">
-                    <span><t t-esc="second_level_menu.name"/> <t t-esc="second_level_menu.id"/></span>
+                    <span><t t-esc="second_level_menu.name"/></span>
                 </t>
                         </a>
                         <div class="dropdown-menu" role="menu">

@@ -11,6 +11,16 @@
                     <field name="type" optional="show"/>
                     <field name="sold_price" optional="show"/>
                     <field name="cost_price" optional="show" />
+                    <field name="weight" optional="show" />
+                    <field name="packing_spec" optional="show" />
+                    <field name="sell_in_store" optional="show" />
+                    <field name="origin_country" optional="show" />
+                    <field name="manuafacturer" optional="show" />
+                    <field name="description" optional="show" />
+                    <field name="don_vi" optional="show" />
+
+
+
 
                 </tree>
 

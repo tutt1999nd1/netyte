@@ -3247,7 +3247,7 @@ msgstr "Lưu thành..."
 #: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Save Current Search"
-msgstr ""
+msgstr "Tìm kiếm theo thuộc tính đã lưu "
 
 #. module: web
 #. openerp-web

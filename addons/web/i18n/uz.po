@@ -3203,7 +3203,7 @@ msgstr ""
 #: code:addons/web/static/src/xml/base.xml:0
 #, python-format
 msgid "Save Current Search"
-msgstr ""
+msgstr "Lưu cách tìm kiếm ưa thích "
 
 #. module: web
 #. openerp-web
