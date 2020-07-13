@@ -21,7 +21,7 @@ const ListConfirmDialog = Dialog.extend({
      * @override
      * @param {Widget} parent
      * @param {Object} record edited record with updated value
-     * @param {Object} changes changes registered by the list controller
+     * @param {Object} changes changes registered by the list controllers
      * @param {string} changes.fieldLabel label of the changed field
      * @param {string} changes.fieldName technical name of the changed field
      * @param {number} changes.nbRecords number of records (total)

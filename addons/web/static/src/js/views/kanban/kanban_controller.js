@@ -205,7 +205,7 @@ var KanbanController = BasicController.extend({
      * (except if we can't create new columns)
      *
      * @private
-     * @override from abstract controller
+     * @override from abstract controllers
      */
     _updateButtons: function () {
         if (this.$buttons) {
@@ -330,7 +330,7 @@ var KanbanController = BasicController.extend({
         }
     },
     /**
-     * Moves the focus from the controller buttons to the first kanban record
+     * Moves the focus from the controllers buttons to the first kanban record
      *
      * @private
      * @param {jQueryEvent} ev

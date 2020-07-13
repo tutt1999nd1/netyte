@@ -38,14 +38,7 @@
                 <tree string="Nhóm hàng hóa" default_order="create_date desc">
                     <field name="code" optional="show"/>
                     <field name="name" optional="show"/>
-<!--                    <field name="status" invisible='1'/>-->
                     <field name="status" optional="show" />
-                    
-<!--                        <button name="confirm" string="Confirm" readonly="True"  class="oe_inline oe_stat_button" icon="/netyte/static/status.png" attrs="{'invisible':[('status','=','ngungkinhdoanh')]}" > </button>-->
-<!--                    </field>-->
-
-<!--                    <field name="description" />-->
-
                 </tree>
 
             </field>
@@ -77,7 +70,8 @@
          <menuitem id="menu_danhmuc" name="Danh mục"
             sequence="10"
             groups="base.group_user"
-            parent="menu_root"
+                              parent="menu_root"
+
         />
          <menuitem id="menu_nhomhanghoa" name="Nhóm hàng hóa"
             sequence="10"
@@ -86,13 +80,11 @@
             parent="menu_danhmuc"
         />
 
-
         <menuitem id="menu_root"
             groups="base.group_user"
             name="Netyte"
             sequence="10"
         />
-
 
 
     </data>

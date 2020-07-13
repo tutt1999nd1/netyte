@@ -86,7 +86,7 @@ var Renderer = AbstractRenderer.extend({
     }
 });
 /**
- * controller
+ * controllers
  */
 var Controller = AbstractController.extend({
     events: _.extend({}, AbstractController.prototype.events, {

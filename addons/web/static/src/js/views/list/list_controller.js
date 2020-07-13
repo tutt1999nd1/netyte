@@ -73,7 +73,7 @@ var ListController = BasicController.extend({
      *
      * @todo This is done only for the data export.  The full mechanism is wrong,
      * this method should be private, most of the code in the sidebar should be
-     * moved to the controller, and we should not use the getParent method...
+     * moved to the controllers, and we should not use the getParent method...
      *
      * @returns {Promise<array[]>} a promise that resolve to the active domain
      */
@@ -242,7 +242,7 @@ var ListController = BasicController.extend({
      * Adds a new record to the a dataPoint of type 'list'.
      * Disables the buttons to prevent concurrent record creation or edition.
      *
-     * @todo make record creation a basic controller feature
+     * @todo make record creation a basic controllers feature
      * @private
      * @param {string} dataPointId a dataPoint of type 'list' (may be grouped)
      * @return {Promise}
@@ -636,7 +636,7 @@ var ListController = BasicController.extend({
         }, { capture: true, once: true });
     },
     /**
-     * Called when the user asks to edit a row -> Updates the controller buttons
+     * Called when the user asks to edit a row -> Updates the controllers buttons
      *
      * @param {OdooEvent} ev
      */

@@ -83,7 +83,7 @@ var FormController = BasicController.extend({
     /**
      * This method switches the form view in edit mode, with a new record.
      *
-     * @todo make record creation a basic controller feature
+     * @todo make record creation a basic controllers feature
      * @param {string} [parentID] if given, the parentID will be used as parent
      *                            for the new record.
      * @returns {Promise}
@@ -466,7 +466,7 @@ var FormController = BasicController.extend({
         return this._super.apply(this, arguments);
     },
     /**
-     * Updates the controller's title according to the new state
+     * Updates the controllers's title according to the new state
      *
      * @override
      * @private
@@ -550,7 +550,7 @@ var FormController = BasicController.extend({
      * @param {OdooEvent} ev
      */
     _onButtonClicked: function (ev) {
-        // stop the event's propagation as a form controller might have other
+        // stop the event's propagation as a form controllers might have other
         // form controllers in its descendants (e.g. in a FormViewDialog)
         ev.stopPropagation();
         var self = this;
@@ -660,7 +660,7 @@ var FormController = BasicController.extend({
         this.model.freezeOrder(ev.data.id);
     },
     /**
-     * Set the focus on the first primary button of the controller (likely Edit)
+     * Set the focus on the first primary button of the controllers (likely Edit)
      *
      * @private
      * @param {OdooEvent} event

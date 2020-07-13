@@ -90,7 +90,7 @@ return {
         }
 
         if (options.route === '/web/dataset/search_read') {
-            // specifically call the controller
+            // specifically call the controllers
             params.model = options.model || params.model;
             params.domain = options.domain || params.domain;
             params.fields = options.fields || params.fields;

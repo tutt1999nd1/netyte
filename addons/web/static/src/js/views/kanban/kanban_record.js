@@ -587,7 +587,7 @@ var KanbanRecord = Widget.extend({
         return new_record;
     },
     /**
-     * Notifies the controller that the record has changed
+     * Notifies the controllers that the record has changed
      *
      * @private
      * @param {Object} data the new values

@@ -9,7 +9,7 @@ odoo.define('web.AbstractController', function (require) {
  * the appropriate methods if necessary.  It also render control panel buttons,
  * and react to changes in the search view.  Basically, all interactions from
  * the renderer/model with the outside world (meaning server/reading in session/
- * reading localstorage, ...) has to go through the controller.
+ * reading localstorage, ...) has to go through the controllers.
  */
 
 var ActionMixin = require('web.ActionMixin');
@@ -108,7 +108,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
         this._super.apply(this, arguments);
     },
     /**
-     * Called each time the controller is attached into the DOM.
+     * Called each time the controllers is attached into the DOM.
      */
     on_attach_callback: function () {
         if (this._controlPanel) {
@@ -120,7 +120,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
         this.renderer.on_attach_callback();
     },
     /**
-     * Called each time the controller is detached from the DOM.
+     * Called each time the controllers is detached from the DOM.
      */
     on_detach_callback: function () {
         if (this._controlPanel) {
@@ -145,7 +145,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
     },
     /**
      * Discards the changes made on the record associated to the given ID, or
-     * all changes made by the current controller if no recordID is given. For
+     * all changes made by the current controllers if no recordID is given. For
      * example, when the user opens the 'home' screen, the action manager calls
      * this method on the active view to make sure it is ok to open the home
      * screen (and lose all current state).
@@ -154,7 +154,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
      * user if he agrees to discard.
      *
      * @param {string} [recordID]
-     *        if not given, we consider all the changes made by the controller
+     *        if not given, we consider all the changes made by the controllers
      * @param {Object} [options]
      * @returns {Promise} resolved if properly discarded, rejected otherwise
      */
@@ -162,7 +162,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
         return Promise.resolve();
     },
     /**
-     * Export the state of the controller containing information that is shared
+     * Export the state of the controllers containing information that is shared
      * between different controllers of a same action (like the current
      * searchQuery of the controlPanel).
      *
@@ -236,8 +236,8 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
     },
     /**
      * For views that require a pager, this method will be called to allow the
-     * controller to instantiate and render a pager. Note that in theory, the
-     * controller can actually render whatever he wants in the pager zone.  If
+     * controllers to instantiate and render a pager. Note that in theory, the
+     * controllers can actually render whatever he wants in the pager zone.  If
      * your view does not want a pager, just let this method empty.
      *
      * @param {jQuery Node} $node
@@ -257,9 +257,9 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
         return Promise.resolve();
     },
     /**
-     * This is the main entry point for the controller.  Changes from the search
+     * This is the main entry point for the controllers.  Changes from the search
      * view arrive in this method, and internal changes can sometimes also call
-     * this method.  It is basically the way everything notifies the controller
+     * this method.  It is basically the way everything notifies the controllers
      * that something has changed.
      *
      * The update method is responsible for fetching necessary data, then
@@ -276,12 +276,12 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
         var shouldReload = (options && 'reload' in options) ? options.reload : true;
         var def = shouldReload ? this.model.reload(this.handle, params) : Promise.resolve();
         // we check here that the updateIndex of the control panel hasn't changed
-        // between the start of the update request and the moment the controller
+        // between the start of the update request and the moment the controllers
         // asks the control panel to update itself ; indeed, it could happen that
-        // another action/controller is executed during this one reloads itself,
-        // and if that one finishes first, it replaces this controller in the DOM,
-        // and this controller should no longer update the control panel.
-        // note that this won't be necessary as soon as each controller will have
+        // another action/controllers is executed during this one reloads itself,
+        // and if that one finishes first, it replaces this controllers in the DOM,
+        // and this controllers should no longer update the control panel.
+        // note that this won't be necessary as soon as each controllers will have
         // its own control panel
         var cpUpdateIndex = this._controlPanel && this._controlPanel.updateIndex;
         return this.dp.add(def).then(function (handle) {
@@ -331,7 +331,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
     },
     /**
      * Renders the html provided by the route specified by the
-     * bannerRoute attribute on the controller (banner_route in the template).
+     * bannerRoute attribute on the controllers (banner_route in the template).
      * Renders it before the view output and add a css class 'o_has_banner' to it.
      * There can be only one banner displayed at a time.
      *
@@ -547,7 +547,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
         }
     },
     /**
-     * Called either from the control panel to focus the controller
+     * Called either from the control panel to focus the controllers
      * or from the view to focus the search bar
      *
      * @private
@@ -571,7 +571,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
      *
      * Note: this method seems wrong, it relies on the model being a basic model,
      * to get the res_id.  It should receive the res_id in the event data
-     * @todo move this to basic controller?
+     * @todo move this to basic controllers?
      *
      * @private
      * @param {OdooEvent} ev
@@ -582,20 +582,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
     _onOpenRecord: function (ev) {
         ev.stopPropagation();
         var record = this.model.get(ev.data.id, {raw: true});
-                console.log("test1");
-
-        let target = 'new';
-        // if(this.on_view){
-        //     if(this.on_view !=='inline'){
-        //         return this.do_action(this.on_view,{
-        //            on_close: this.reload.bind(this),
-        //            additional_context: record.context,
-        //         });
-        //     }
-        //     else target='inline';
-        // }
         this.trigger_up('switch_view', {
-            target: target,
             view_type: 'form',
             res_id: record.res_id,
             mode: ev.data.mode || 'readonly',

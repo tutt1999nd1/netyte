@@ -120,8 +120,8 @@ var ControlPanelRenderer = Renderer.extend({
      * @param {Object} [status.cp_content] dictionnary containing the jQuery
      *   elements to insert in the exposed areas
      * @param {string} [status.breadcrumbs] the breadcrumbs to display before
-     *   the current controller
-     * @param {string} [status.title] the title of the current controller, to
+     *   the current controllers
+     * @param {string} [status.title] the title of the current controllers, to
      *   display at the end of the breadcrumbs
      * @param {Object} [options]
      * @param {Boolean} [options.clear=true] set to false to keep control panel

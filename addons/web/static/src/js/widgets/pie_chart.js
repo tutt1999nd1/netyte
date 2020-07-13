@@ -58,7 +58,7 @@ var PieChart = Widget.extend({
         };
     },
     /**
-     * Instantiates the pie chart view and starts the graph controller.
+     * Instantiates the pie chart view and starts the graph controllers.
      *
      * @override
      */

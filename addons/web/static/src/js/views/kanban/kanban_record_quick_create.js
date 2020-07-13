@@ -41,7 +41,7 @@ var RecordQuickCreate = Widget.extend({
     },
     /**
      * Loads the form fieldsView (if not provided), instantiates the form view
-     * and starts the form controller.
+     * and starts the form controllers.
      *
      * @override
      */

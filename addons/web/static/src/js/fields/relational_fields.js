@@ -1400,7 +1400,7 @@ var FieldX2Many = AbstractField.extend({
     /**
      * Removes the given record from the relation.
      * Stops the propagation of the event to prevent it from being handled again
-     * by the parent controller.
+     * by the parent controllers.
      *
      * @private
      * @param {OdooEvent} ev
@@ -1416,7 +1416,7 @@ var FieldX2Many = AbstractField.extend({
     /**
      * When the discard_change event go through this field, we can just decorate
      * the data with the name of the field.  The origin field ignore this
-     * information (it is a subfield in a o2m), and the controller will need to
+     * information (it is a subfield in a o2m), and the controllers will need to
      * know which field needs to be handled.
      *
      * @private
@@ -1517,12 +1517,12 @@ var FieldX2Many = AbstractField.extend({
      * changes; if the row could be saved, we make the row readonly. Otherwise,
      * we trigger a new event for the view to tell it to discard the changes
      * made to that row.
-     * Note that we do that in the controller mutex to ensure that the check on
+     * Note that we do that in the controllers mutex to ensure that the check on
      * the row (whether or not it can be saved) is done once all potential
      * onchange RPCs are done (those RPCs being executed in the same mutex).
      * This particular handling is done in this handler, instead of in the
      * _saveLine function directly, because _saveLine is also called from
-     * the controller (via commitChanges), and in this case, it is already
+     * the controllers (via commitChanges), and in this case, it is already
      * executed in the mutex.
      *
      * @private
@@ -1545,8 +1545,8 @@ var FieldX2Many = AbstractField.extend({
         });
     },
     /**
-     * Add necessary key parts for the basic controller to compute the local
-     * storage key. The event will be properly handled by the basic controller.
+     * Add necessary key parts for the basic controllers to compute the local
+     * storage key. The event will be properly handled by the basic controllers.
      *
      * @param {OdooEvent} ev
      * @private

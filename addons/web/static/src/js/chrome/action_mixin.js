@@ -93,7 +93,7 @@ var ActionMixin = {
     //--------------------------------------------------------------------------
 
     /**
-     * In some situations, we need confirmation from the controller that the
+     * In some situations, we need confirmation from the controllers that the
      * current state can be destroyed without prejudice to the user.  For
      * example, if the user has edited a form, maybe we should ask him if we
      * can discard all his changes when we switch to another action.  In that
@@ -109,7 +109,7 @@ var ActionMixin = {
     },
     /**
      * This function is called when the current state of the action
-     * should be known. For instance, if the action is a view controller,
+     * should be known. For instance, if the action is a view controllers,
      * this may be useful to reinstantiate a view in the same state.
      *
      * Typically the state can (and should) be encoded in a query object of
@@ -191,7 +191,7 @@ var ActionMixin = {
      * FIXME: this logic should be rethought
      *
      * Handles a context request: provides to the caller the state of the
-     * current controller.
+     * current controllers.
      *
      * @private
      * @param {OdooEvent} ev

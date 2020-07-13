@@ -47,16 +47,16 @@ var ActionManager = Widget.extend({
         this.actions = {};
 
         // 'controllers' is an Object that registers the alive controllers
-        // linked registered actions, a controller being Object with keys
+        // linked registered actions, a controllers being Object with keys
         // (amongst others) 'jsID' (a local identifier) and 'widget' (the
-        // instance of the controller's widget)
+        // instance of the controllers's widget)
         this.controllers = {};
 
         // 'controllerStack' is the stack of ids of the controllers currently
         // displayed in the current window
         this.controllerStack = [];
 
-        // 'currentDialogController' is the current controller opened in a
+        // 'currentDialogController' is the current controllers opened in a
         // dialog (i.e. coming from an action with target='new')
         this.currentDialogController = null;
     },
@@ -86,12 +86,12 @@ var ActionManager = Widget.extend({
     //--------------------------------------------------------------------------
 
     /**
-     * This function is called when the current controller is about to be
+     * This function is called when the current controllers is about to be
      * removed from the DOM, because a new one will be pushed, or an old one
-     * will be restored. It ensures that the current controller can be left (for
+     * will be restored. It ensures that the current controllers can be left (for
      * instance, that it has no unsaved changes).
      *
-     * @returns {Promise} resolved if the current controller can be left,
+     * @returns {Promise} resolved if the current controllers can be left,
      *   rejected otherwise.
      */
     clearUncommittedChanges: function () {
@@ -114,7 +114,7 @@ var ActionManager = Widget.extend({
      * @param {Function} [options.on_close] callback to be executed when the
      *   current action is active again (typically, if the new action is
      *   executed in target="new", on_close will be executed when the dialog is
-     *   closed, if the current controller is still active)
+     *   closed, if the current controllers is still active)
      * @param {Function} [options.on_reverse_breadcrumb] callback to be executed
      *   whenever an anterior breadcrumb item is clicked on
      * @param {boolean} [options.pushState=true] set to false to prevent the
@@ -164,7 +164,7 @@ var ActionManager = Widget.extend({
 
             return self._handleAction(action, options).then(function () {
                 // now that the action has been executed, force its 'pushState'
-                // flag to 'true', as we don't want to prevent its controller
+                // flag to 'true', as we don't want to prevent its controllers
                 // from pushing its state if it changes in the future
                 action.pushState = true;
 
@@ -182,9 +182,9 @@ var ActionManager = Widget.extend({
         this.trigger_up('push_state', {state: state});
     },
     /**
-     * Returns the action of the last controller in the controllerStack, i.e.
-     * the action of the currently displayed controller in the main window (not
-     * in a dialog), and null if there is no controller in the stack.
+     * Returns the action of the last controllers in the controllerStack, i.e.
+     * the action of the currently displayed controllers in the main window (not
+     * in a dialog), and null if there is no controllers in the stack.
      *
      * @returns {Object|null}
      */
@@ -193,9 +193,9 @@ var ActionManager = Widget.extend({
         return controller ? this.actions[controller.actionID] : null;
     },
     /**
-     * Returns the last controller in the controllerStack, i.e. the currently
-     * displayed controller in the main window (not in a dialog), and
-     * null if there is no controller in the stack.
+     * Returns the last controllers in the controllerStack, i.e. the currently
+     * displayed controllers in the main window (not in a dialog), and
+     * null if there is no controllers in the stack.
      *
      * @returns {Object|null}
      */
@@ -237,7 +237,7 @@ var ActionManager = Widget.extend({
     //--------------------------------------------------------------------------
 
     /**
-     * Appends the given controller to the DOM and restores its scroll position.
+     * Appends the given controllers to the DOM and restores its scroll position.
      * Also updates the control panel.
      *
      * @private
@@ -256,7 +256,7 @@ var ActionManager = Widget.extend({
     /**
      * Closes the current dialog, if any. Because we listen to the 'closed'
      * event triggered by the dialog when it is closed, this also destroys the
-     * embedded controller and removes the reference to the corresponding action.
+     * embedded controllers and removes the reference to the corresponding action.
      * This also executes the 'on_close' handler in some cases, and may also
      * provide infos for closing this dialog.
      *
@@ -275,8 +275,8 @@ var ActionManager = Widget.extend({
         }
     },
     /**
-     * Detaches the current controller from the DOM and stores its scroll
-     * position, in case we'd come back to that controller later.
+     * Detaches the current controllers from the DOM and stores its scroll
+     * position, in case we'd come back to that controllers later.
      *
      * @private
      */
@@ -288,17 +288,17 @@ var ActionManager = Widget.extend({
         }
     },
     /**
-     * Executes actions for which a controller has to be appended to the DOM,
+     * Executes actions for which a controllers has to be appended to the DOM,
      * either in the main content (target="current", by default), or in a dialog
      * (target="new").
      *
      * @private
      * @param {Object} action
-     * @param {widget} action.controller a Widget instance to append to the DOM
+     * @param {widget} action.controllers a Widget instance to append to the DOM
      * @param {string} [action.target="current"] set to "new" to render the
-     *   controller in a dialog
+     *   controllers in a dialog
      * @param {Object} options @see doAction for details
-     * @returns {Promise} resolved when the controller is started and appended
+     * @returns {Promise} resolved when the controllers is started and appended
      */
     _executeAction: function (action, options) {
         var self = this;
@@ -348,7 +348,7 @@ var ActionManager = Widget.extend({
      * @private
      * @param {Object} action
      * @param {Object} options @see doAction for details
-     * @returns {Promise} resolved when the controller is rendered inside a
+     * @returns {Promise} resolved when the controllers is rendered inside a
      *   dialog appended to the DOM
      */
     _executeActionInDialog: function (action, options) {
@@ -545,10 +545,10 @@ var ActionManager = Widget.extend({
         return Promise.resolve();
     },
     /**
-     * Returns a description of the controllers in the given  controller stack.
+     * Returns a description of the controllers in the given  controllers stack.
      * It is used to render the breadcrumbs. It is an array of Objects with keys
      * 'title' (what to display in the breadcrumbs) and 'controllerID' (the ID
-     * of the corresponding controller, used to restore it when this part of the
+     * of the corresponding controllers, used to restore it when this part of the
      * breadcrumbs is clicked).
      *
      * @private
@@ -565,8 +565,8 @@ var ActionManager = Widget.extend({
         });
     },
     /**
-     * Returns the index where a controller should be inserted in the controller
-     * stack according to the given options. By default, a controller is pushed
+     * Returns the index where a controllers should be inserted in the controllers
+     * stack according to the given options. By default, a controllers is pushed
      * on the top of the stack.
      *
      * @private
@@ -574,7 +574,7 @@ var ActionManager = Widget.extend({
      *   index 0 and remove all other controllers
      * @param {options} [options.index=null] if given, that index is returned
      * @param {options} [options.replace_last_action=false] if true, replace the
-     *   last controller of the stack
+     *   last controllers of the stack
      * @returns {integer} index
      */
     _getControllerStackIndex: function (options) {
@@ -591,7 +591,7 @@ var ActionManager = Widget.extend({
         return index;
     },
     /**
-     * Returns an object containing information about the given controller, like
+     * Returns an object containing information about the given controllers, like
      * its title, its action's id, the active_id and active_ids of the action...
      *
      * @private
@@ -676,29 +676,29 @@ var ActionManager = Widget.extend({
         }
     },
     /**
-     * Updates the internal state and the DOM with the given controller as
-     * current controller.
+     * Updates the internal state and the DOM with the given controllers as
+     * current controllers.
      *
      * @private
      * @param {Object} controller
      * @param {string} controller.jsID
      * @param {Widget} controller.widget
-     * @param {integer} controller.index the controller is pushed at that
-     *   position in the controller stack and controllers with an higher index
+     * @param {integer} controller.index the controllers is pushed at that
+     *   position in the controllers stack and controllers with an higher index
      *   are destroyed
      */
     _pushController: function (controller) {
         var self = this;
 
-        // detach the current controller
+        // detach the current controllers
         this._detachCurrentController();
 
-        // push the new controller to the stack at the given position, and
+        // push the new controllers to the stack at the given position, and
         // destroy controllers with an higher index
         var toDestroy = this.controllerStack.slice(controller.index);
         // reject from the list of controllers to destroy the one that we are
         // currently pushing, or those linked to the same action as the one
-        // linked to the controller that we are pushing
+        // linked to the controllers that we are pushing
         toDestroy = _.reject(toDestroy, function (controllerID) {
             return controllerID === controller.jsID ||
                    self.controllers[controllerID].actionID === controller.actionID;
@@ -707,7 +707,7 @@ var ActionManager = Widget.extend({
         this.controllerStack = this.controllerStack.slice(0, controller.index);
         this.controllerStack.push(controller.jsID);
 
-        // append the new controller to the DOM
+        // append the new controllers to the DOM
         this._appendController(controller);
 
         // notify the environment of the new action
@@ -716,7 +716,7 @@ var ActionManager = Widget.extend({
             controller: controller,
         });
 
-        // close all dialogs when the current controller changes
+        // close all dialogs when the current controllers changes
         core.bus.trigger('close_dialogs');
 
         // toggle the fullscreen mode for actions in target='fullscreen'
@@ -724,7 +724,7 @@ var ActionManager = Widget.extend({
     },
     /**
      * Pushes the given state, with additional information about the given
-     * controller, like the action's id and the controller's title.
+     * controllers, like the action's id and the controllers's title.
      *
      * @private
      * @param {string} controllerID
@@ -783,7 +783,7 @@ var ActionManager = Widget.extend({
         action.pushState = options.pushState;
     },
     /**
-     * Unlinks the given action and its controller from the internal structures
+     * Unlinks the given action and its controllers from the internal structures
      * and destroys its controllers.
      *
      * @private
@@ -811,13 +811,13 @@ var ActionManager = Widget.extend({
         _.each(_.uniq(actionsToRemove), this._removeAction.bind(this));
     },
     /**
-     * Restores a controller from the controllerStack and destroys all
-     * controllers stacked over the given controller (called when coming back
+     * Restores a controllers from the controllerStack and destroys all
+     * controllers stacked over the given controllers (called when coming back
      * using the breadcrumbs).
      *
      * @private
      * @param {string} controllerID
-     * @returns {Promise} resolved when the controller has been restored
+     * @returns {Promise} resolved when the controllers has been restored
      */
     _restoreController: function (controllerID) {
         var self = this;
@@ -837,16 +837,16 @@ var ActionManager = Widget.extend({
         });
     },
     /**
-     * Starts the controller by appending it in a document fragment, so that it
+     * Starts the controllers by appending it in a document fragment, so that it
      * is ready when it will be appended to the DOM. This allows to prevent
      * flickering for widgets doing async stuff in willStart() or start().
      *
-     * Also updates the control panel on any change of the title on controller's
+     * Also updates the control panel on any change of the title on controllers's
      * widget.
      *
      * @private
      * @param {Object} controller
-     * @returns {Promise<Object>} resolved with the controller when it is ready
+     * @returns {Promise<Object>} resolved with the controllers when it is ready
      */
     _startController: function (controller) {
         var fragment = document.createDocumentFragment();
@@ -883,8 +883,8 @@ var ActionManager = Widget.extend({
         this._restoreController(ev.data.controllerID);
     },
     /**
-     * Goes back in the history: if a controller is opened in a dialog, closes
-     * the dialog, otherwise, restores the second to last controller from the
+     * Goes back in the history: if a controllers is opened in a dialog, closes
+     * the dialog, otherwise, restores the second to last controllers from the
      * stack.
      *
      * @private
@@ -901,7 +901,7 @@ var ActionManager = Widget.extend({
     },
     /**
      * Intercepts and triggers a new push_state event, with additional
-     * information about the given controller.
+     * information about the given controllers.
      *
      * @private
      * @param {OdooEvent} ev

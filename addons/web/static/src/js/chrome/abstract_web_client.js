@@ -299,8 +299,8 @@ var AbstractWebClient = Widget.extend(ServiceProviderMixin, KeyboardNavigationMi
      * Handler to be overridden, called each time the UI is updated by the
      * ActionManager.
      *
-     * @param {Object} action the action of the currently displayed controller
-     * @param {Object} controller the currently displayed controller
+     * @param {Object} action the action of the currently displayed controllers
+     * @param {Object} controller the currently displayed controllers
      */
     current_action_updated: function (action, controller) {
     },

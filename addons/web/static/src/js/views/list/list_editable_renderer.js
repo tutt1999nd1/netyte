@@ -1308,7 +1308,7 @@ ListRenderer.include({
                 // removes rows)
                 return Promise.reject();
             }
-            // Notify the controller we want to make a record editable
+            // Notify the controllers we want to make a record editable
             return new Promise(function (resolve) {
                 self.trigger_up('edit_line', {
                     recordId: recordId,

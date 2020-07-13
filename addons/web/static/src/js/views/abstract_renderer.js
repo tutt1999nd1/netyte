@@ -59,7 +59,7 @@ return mvc.Renderer.extend({
      * The kind of state that we expect the renderer to have is mostly DOM state
      * such as the scroll position, the currently active tab page, ...
      *
-     * This method is called before each updateState, by the controller.
+     * This method is called before each updateState, by the controllers.
      *
      * @see setLocalState
      * @returns {any}
@@ -75,7 +75,7 @@ return mvc.Renderer.extend({
      * This is the reverse operation from getLocalState.  With this method, we
      * expect the renderer to restore all DOM state, if it is relevant.
      *
-     * This method is called after each updateState, by the controller.
+     * This method is called after each updateState, by the controllers.
      *
      * @see getLocalState
      * @param {any} localState the result of a call to getLocalState

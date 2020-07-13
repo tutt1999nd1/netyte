@@ -6,7 +6,7 @@ var controlPanelViewParameters = require('web.controlPanelViewParameters');
 
 /**
  * The aim of this mixin is to facilitate the interaction between
- * a view controller and a dropdown menu with its control panel
+ * a view controllers and a dropdown menu with its control panel
  * TO DO: the pivot subview has two types of groupbys so that it will not
  * understand the current implementation of this mixin
  *
@@ -64,7 +64,7 @@ var GroupByMenuMixin = {
         });
     },
     /**
-     * This method has to be implemented by the view controller that needs to
+     * This method has to be implemented by the view controllers that needs to
      * interpret the click in an appropriate manner.
      *
      * @private

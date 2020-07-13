@@ -123,6 +123,7 @@ var Pager = Widget.extend({
         this.options.validate().then(function() {
             var size = self.state.size;
             var current_min = self.state.current_min;
+            // var limit = self.state.limit;
             var limit = self.state.limit;
 
             // Compute the new current_min

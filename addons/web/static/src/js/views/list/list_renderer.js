@@ -71,7 +71,7 @@ var ListRenderer = BasicRenderer.extend({
     },
     /**
      * Compute columns visilibity. This can't be done earlier as we need the
-     * controller to respond to the load_optional_fields call of processColumns.
+     * controllers to respond to the load_optional_fields call of processColumns.
      *
      * @override
      */

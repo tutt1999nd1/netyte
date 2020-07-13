@@ -4,7 +4,7 @@ odoo.define('web.CalendarController', function (require) {
 /**
  * Calendar Controller
  *
- * This is the controller in the Model-Renderer-Controller architecture of the
+ * This is the controllers in the Model-Renderer-Controller architecture of the
  * calendar view.  Its role is to coordinate the data from the calendar model
  * with the renderer, and with the outside world (such as a search view input)
  */

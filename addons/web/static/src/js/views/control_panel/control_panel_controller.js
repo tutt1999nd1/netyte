@@ -4,7 +4,8 @@ odoo.define('web.ControlPanelController', function (require) {
 var mvc = require('web.mvc');
 
 var ControlPanelController = mvc.Controller.extend({
-    className: 'o_cp_controller',
+
+    className:'o_cp_controller',
     custom_events: {
         facet_removed: '_onFacetRemoved',
         get_search_query: '_onGetSearchQuery',
@@ -26,6 +27,11 @@ var ControlPanelController = mvc.Controller.extend({
      * @param {string} params.modelName
      */
     init: function (parent, model, renderer, params) {
+        console.log("patent->",parent);
+                console.log("model->",model);
+        console.log("renderer->",params);
+
+
         this._super.apply(this, arguments);
 
         this.modelName = params.modelName;
@@ -55,7 +61,7 @@ var ControlPanelController = mvc.Controller.extend({
         return this.model.exportState();
     },
     /**
-     * Called by the abstract controller to give focus to the searchbar
+     * Called by the abstract controllers to give focus to the searchbar
      */
     focusSearchBar: function () {
         if (this.renderer.searchBar) {

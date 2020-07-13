@@ -8,18 +8,18 @@ odoo.define('web.AbstractView', function (require) {
  *
  * The abstract view role is to take a set of fields, an arch (the xml
  * describing the view in db), and some params, and then, to create a
- * controller, a renderer and a model.  This is the classical MVC pattern, but
+ * controllers, a renderer and a model.  This is the classical MVC pattern, but
  * the word 'view' has historical significance in Odoo code, so we replaced the
  * V in MVC by the 'renderer' word.
  *
  * JS views are supposed to be used like this:
  * 1. instantiate a view with some arch, fields and params
  * 2. call the getController method on the view instance. This returns a
- *    controller (with a model and a renderer as sub widgets)
- * 3. append the controller somewhere
+ *    controllers (with a model and a renderer as sub widgets)
+ * 3. append the controllers somewhere
  *
- * Note that once a controller has been instantiated, the view class is no
- * longer useful (unless you want to create another controller), and will be
+ * Note that once a controllers has been instantiated, the view class is no
+ * longer useful (unless you want to create another controllers), and will be
  * in most case discarded.
  */
 
@@ -121,7 +121,7 @@ var AbstractView = Factory.extend({
 
         // the boolean parameter 'isEmbedded' determines if the view should be
         // considered as a subview. For now this is only used by the graph
-        // controller that appends a 'Group By' button beside the 'Measures'
+        // controllers that appends a 'Group By' button beside the 'Measures'
         // button when the graph view is embedded.
         var isEmbedded = params.isEmbedded || false;
 
@@ -221,7 +221,7 @@ var AbstractView = Factory.extend({
         var _super = this._super.bind(this);
         return Promise.all([cpDef, spDef]).then(function ([controlPanel, searchPanel]) {
             // get the parent of the model if it already exists, as _super will
-            // set the new controller as parent, which we don't want
+            // set the new controllers as parent, which we don't want
             var modelParent = self.model && self.model.getParent();
             var prom = _super(parent);
             prom.then(function (controller) {
@@ -380,7 +380,7 @@ var AbstractView = Factory.extend({
         return fv;
     },
     /**
-     * Hook to update the renderer, controller and load params with the result
+     * Hook to update the renderer, controllers and load params with the result
      * of a search (i.e. a context, a domain and a groupBy).
      *
      * @private

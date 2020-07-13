@@ -680,7 +680,7 @@ var BasicController = AbstractController.extend(FieldManagerMixin, {
             .guardedCatch(ev.data.onFailure);
     },
     /**
-     * Forces to save directly the changes if the controller is in readonly,
+     * Forces to save directly the changes if the controllers is in readonly,
      * because in that case the changes come from widgets that are editable even
      * in readonly (e.g. Priority).
      *

@@ -99,7 +99,7 @@ var Renderer = Widget.extend({
 });
 
 /**
- * The controller has to coordinate between parent, renderer and model.
+ * The controllers has to coordinate between parent, renderer and model.
  *
  * @class Controller
  */
@@ -160,13 +160,13 @@ var Factory = Class.extend({
     //--------------------------------------------------------------------------
 
     /**
-     * Main method of the Factory class. Create a controller, and make sure that
+     * Main method of the Factory class. Create a controllers, and make sure that
      * data and libraries are loaded.
      *
      * There is a unusual thing going in this method with parents: we create
      * renderer/model with parent as parent, then we have to reassign them at
      * the end to make sure that we have the proper relationships.  This is
-     * necessary to solve the problem that the controller needs the model and
+     * necessary to solve the problem that the controllers needs the model and
      * the renderer to be instantiated, but the model need a parent to be able
      * to load itself, and the renderer needs the data in its constructor.
      *

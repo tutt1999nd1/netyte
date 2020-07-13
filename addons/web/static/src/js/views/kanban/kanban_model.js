@@ -48,7 +48,7 @@ var KanbanModel = BasicModel.extend({
         return this._reloadProgressBarGroupFromRecord(new_record.id, def);
     },
     /**
-     * Creates a new group from a name (perfforms a name_create).
+     * Creates a new group from a name (performs a name_create).
      *
      * @param {string} name
      * @param {string} parentID localID of the parent of the group
