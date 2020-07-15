@@ -70,7 +70,7 @@
          <menuitem id="menu_danhmuc" name="Danh mục"
             sequence="10"
             groups="base.group_user"
-                              parent="menu_root"
+            parent="menu_root"
 
         />
          <menuitem id="menu_nhomhanghoa" name="Nhóm hàng hóa"

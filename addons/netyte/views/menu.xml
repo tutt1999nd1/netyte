@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!--    Giao dịch-->
+    <menuitem id="menu_giaodich" name="Giao dịch"
+              sequence="10"
+              groups="base.group_user"
+              parent="netyte.menu_root"
+
+    />
+    <menuitem id="menu_dathang" name="Đặt hàng"
+              sequence="10"
+              groups="base.group_user"
+              action="action_nhomhanghoa"
+              parent="netyte.menu_giaodich"
+    />
+    <menuitem id="menu_hoadon" name="Hóa đơn"
+              sequence="10"
+              groups="base.group_user"
+              action="action_nhomhanghoa"
+              parent="netyte.menu_giaodich"
+    />
+    <menuitem id="menu_vandon" name="Vận đơn"
+              sequence="10"
+              groups="base.group_user"
+              action="action_nhomhanghoa"
+              parent="netyte.menu_giaodich"
+    />
+    <menuitem id="menu_trahang" name="Trả hàng"
+              sequence="10"
+              groups="base.group_user"
+              action="action_nhomhanghoa"
+              parent="netyte.menu_giaodich"
+    />
+    <menuitem id="menu_nhaphang" name="Nhập hàng"
+              sequence="10"
+              groups="base.group_user"
+              action="action_nhomhanghoa"
+              parent="netyte.menu_giaodich"
+    />
+    <menuitem id="menu_tranhaphang" name="Trả nhập hàng"
+              sequence="10"
+              groups="base.group_user"
+              action="action_nhomhanghoa"
+              parent="netyte.menu_giaodich"
+    />
+    <menuitem id="menu_xuathuy" name="Xuất hủy"
+              sequence="10"
+              groups="base.group_user"
+              action="action_nhomhanghoa"
+              parent="netyte.menu_giaodich"
+    />
+
+    <!--    Đối tác-->
+    <menuitem id="menu_doitac" name="Đối tác"
+              sequence="10"
+              groups="base.group_user"
+              parent="netyte.menu_root"
+
+    />
+    <menuitem id="menu_khachhang" name="Khách hàng"
+              sequence="10"
+              groups="base.group_user"
+              action="action_nhomhanghoa"
+              parent="netyte.menu_doitac"
+    />
+    <menuitem id="menu_nhacungcap" name="Nhà cung cấp"
+              sequence="10"
+              groups="base.group_user"
+              action="action_nhomhanghoa"
+              parent="netyte.menu_doitac"
+    />
+    <menuitem id="menu_doitacgiaohang" name="Đối tác giao hàng"
+              sequence="10"
+              groups="base.group_user"
+              action="action_nhomhanghoa"
+              parent="netyte.menu_doitac"
+    />
+    <menuitem id="menu_bacsi" name="Bác sĩ"
+              sequence="10"
+              groups="base.group_user"
+              action="action_nhomhanghoa"
+              parent="netyte.menu_doitac"
+    />
+
+    <!--    Nhân viên-->
+    <menuitem id="menu_nhanvien" name="Nhân viên"
+              sequence="10"
+              groups="base.group_user"
+              parent="netyte.menu_root"
+
+    />
+    <menuitem id="menu_nv" name="Nhân viên"
+              sequence="10"
+              groups="base.group_user"
+              action="action_nhomhanghoa"
+              parent="netyte.menu_nhanvien"
+    />
+    <menuitem id="menu_chamcong" name="Chấm công"
+              sequence="10"
+              groups="base.group_user"
+              action="action_nhomhanghoa"
+              parent="netyte.menu_nhanvien"
+    />
+    <menuitem id="menu_bangtinhluong" name="Bảng tính lương"
+              sequence="10"
+              groups="base.group_user"
+              action="action_nhomhanghoa"
+              parent="netyte.menu_nhanvien"
+    />
+    <menuitem id="menu_thietlaphh" name="Thiết lập hoa hồng"
+              sequence="10"
+              groups="base.group_user"
+              action="action_nhomhanghoa"
+              parent="netyte.menu_nhanvien"
+    />
+
+</odoo>

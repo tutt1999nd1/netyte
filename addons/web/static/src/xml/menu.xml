@@ -52,6 +52,59 @@
                 <t t-if="menu.xmlid ==='netyte.menu_hanghoa'">
                     <span><i class="fa fa-medkit"></i> <t t-esc="menu.name"/> </span>
                 </t>
+
+<!--                Giao dich-->
+
+                 <t t-if="menu.xmlid ==='netyte.menu_dathang'">
+                    <span><i class="fa fa-inbox"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_hoadon'">
+                    <span><i class="fa fa-file-archive-o"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_vandon'">
+                    <span><i class="fa fa-file-text"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_trahang'">
+                    <span><i class="fa fa-reply-all"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_nhaphang'">
+                    <span><i class="fa fa-medkit"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_tranhaphang'">
+                    <span><i class="fa fa-medkit"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                  <t t-if="menu.xmlid ==='netyte.menu_xuathuy'">
+                    <span><i class="fa fa-trash-o"></i> <t t-esc="menu.name"/> </span>
+                </t>
+
+<!--                Đối tác-->
+
+                 <t t-if="menu.xmlid ==='netyte.menu_khachhang'">
+                    <span><i class="fa fa-user-secret"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_nhacungcap'">
+                    <span><i class="fa fa-users"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_doitacgiaohang'">
+                    <span><i class="fa fa-file-text"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_bacsi'">
+                    <span><i class="fa fa-user-md"></i> <t t-esc="menu.name"/> </span>
+                </t>
+
+<!--                Nhân viên-->
+                   <t t-if="menu.xmlid ==='netyte.menu_nv'">
+                    <span><i class="fa fa-users"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_chamcong'">
+                    <span><i class="fa fa-calendar-check-o"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_bangtinhluong'">
+                    <span><i class="fa fa-database"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_thietlaphh'">
+                    <span><i class="fa fa-usd"></i> <t t-esc="menu.name"/> </span>
+                </t>
             </a>
         </t>
         <li t-if="inNavbar">
@@ -70,6 +123,58 @@
                     <span><i class="fa fa-medkit"></i> <t t-esc="menu.name"/> </span>
             </t>
 
+<!--            Giao dich-->
+
+                 <t t-if="menu.xmlid ==='netyte.menu_dathang'">
+                    <span><i class="fa fa-inbox"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_hoadon'">
+                    <span><i class="fa fa-file-archive-o"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_vandon'">
+                    <span><i class="fa fa-file-text"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_trahang'">
+                    <span><i class="fa fa-reply-all"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_nhaphang'">
+                    <span><i class="fa fa-medkit"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_tranhaphang'">
+                    <span><i class="fa fa-medkit"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                  <t t-if="menu.xmlid ==='netyte.menu_xuathuy'">
+                    <span><i class="fa fa-trash-o"></i> <t t-esc="menu.name"/> </span>
+                </t>
+
+<!--                Đối tác-->
+
+                 <t t-if="menu.xmlid ==='netyte.menu_khachhang'">
+                    <span><i class="fa fa-user-secret"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_nhacungcap'">
+                    <span><i class="fa fa-users"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_doitacgiaohang'">
+                    <span><i class="fa fa-file-text"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_bacsi'">
+                    <span><i class="fa fa-user-md"></i> <t t-esc="menu.name"/> </span>
+                </t>
+
+<!--                Nhân viên-->
+                <t t-if="menu.xmlid ==='netyte.menu_nv'">
+                    <span><i class="fa fa-users"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_chamcong'">
+                    <span><i class="fa fa-calendar-check-o"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_bangtinhluong'">
+                    <span><i class="fa fa-database"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                 <t t-if="menu.xmlid ==='netyte.menu_thietlaphh'">
+                    <span><i class="fa fa-usd"></i> <t t-esc="menu.name"/> </span>
+                </t>
         </div>
         <t t-foreach="menu.children" t-as="menu">
             <t t-call="Menu.link"/>
@@ -92,12 +197,21 @@
                     <li>
                         <a href="#" class="dropdown-toggle o-no-caret o_menu_header_lvl_1" t-att-data-menu-xmlid="second_level_menu.xmlid" data-toggle="dropdown" data-display="static" role="button" aria-expanded="false">
 <!--                            <t t-esc="second_level_menu.name"/>-->
-                             <t t-if="second_level_menu.xmlid  ==='netyte.menu_danhmuc' ">
-                    <span><i class="fa fa-plus-square"></i> <t t-esc="second_level_menu.name"/></span>
-                </t>
-                <t t-else="">
-                    <span><t t-esc="second_level_menu.name"/></span>
-                </t>
+                             <t t-if="second_level_menu.xmlid  ==='netyte.menu_danhmuc'">
+                                 <span><i class="fa fa-plus-square"></i> <t t-esc="second_level_menu.name"/></span>
+                             </t>
+                              <t t-if="second_level_menu.xmlid  ==='netyte.menu_giaodich'">
+                                 <span><i class="fa fa-exchange"></i> <t t-esc="second_level_menu.name"/></span>
+                             </t>
+                             <t t-if="second_level_menu.xmlid  ==='netyte.menu_doitac'">
+                                 <span><i class="fa fa-user"></i> <t t-esc="second_level_menu.name"/></span>
+                             </t>
+                              <t t-if="second_level_menu.xmlid  ==='netyte.menu_nhanvien'">
+                                 <span><i class="fa fa-users"></i> <t t-esc="second_level_menu.name"/></span>
+                             </t>
+<!--                <t t-else="">-->
+<!--                    <span><t t-esc="second_level_menu.name"/></span>-->
+<!--                </t>-->
                         </a>
                         <div class="dropdown-menu" role="menu">
                             <t t-foreach="second_level_menu.children" t-as="third_level_menu">

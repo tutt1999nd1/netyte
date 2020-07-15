@@ -16,6 +16,7 @@
         'views/nhom_hang_hoa.xml',
         'views/hang_hoa.xml',
         'views/listview_templates.xml',
+        'views/menu.xml',
 
     ],
     # 'qweb': ['static/src/xml/*.xml'],
