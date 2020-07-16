@@ -5,7 +5,7 @@
             <field name="model">hang.hoa</field>
             <field name="name">hanghoa.tree.view</field>
             <field name="arch" type="xml">
-                <tree string="Hàng hóa" default_order="create_date desc">
+                <tree string="Hàng hóa" default_order="create_date desc" multi_edit="1">
                     <field name="product_no" optional="show"/>
                     <field name="name" optional="show"/>
                     <field name="type" optional="show"/>
@@ -17,13 +17,21 @@
                     <field name="origin_country" optional="show" />
                     <field name="manuafacturer" optional="show" />
                     <field name="description" optional="show" />
-                    <field name="don_vi" optional="show" />
-
+                    <field name="don_vi_tinh" optional="show"/>
+                </tree>
+            </field>
+        </record>
+         <record id="don_vi_to_tree_view" model="ir.ui.view">
+            <field name="model">don.vi.to</field>
+            <field name="name">don.vi.to.tree.view</field>
+            <field name="arch" type="xml">
+                <tree string="Danh sách đơn vị" default_order="create_date desc">
+                    <field name="name" />
+                    <field name="gia_ban" />
 
 
 
                 </tree>
-
             </field>
         </record>
 
@@ -49,6 +57,9 @@
                                         <field name="origin_country" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
                                         <field name="on_hand" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
                                         <field name="position"/>
+                                        <field name="don_vi_tinh" />
+                                        <field name="don_vi" />
+
                                     </group>
                                     <group>
                                         <field name="cost_price" attrs="{'invisible':[('type','!=','hanghoa')]}"/>

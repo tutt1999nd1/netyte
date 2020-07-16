@@ -35,7 +35,7 @@
              <field name="model">nhom.hang.hoa</field>
             <field name="name">thuoc.tree.view</field>
             <field name="arch" type="xml">
-                <tree string="Nhóm hàng hóa" default_order="create_date desc">
+                <tree string="Nhóm hàng hóa" default_order="create_date desc" multi_edit="1">
                     <field name="code" optional="show"/>
                     <field name="name" optional="show"/>
                     <field name="status" optional="show" />

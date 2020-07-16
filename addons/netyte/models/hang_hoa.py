@@ -5,7 +5,7 @@ class Hang_hoa(models.Model):
     on_hand = fields.Integer("Tồn kho")
     position = fields.Char("Vị trí")
     cost_price = fields.Float("Gía vốn")
-    sold_price = fields.Float("Giá bán")
+    sold_price = fields.Float("Giá bán",compute='_tien')
     sold_price_combo = fields.Float("Giá bán combo",compute='_sum_price')
     weight = fields.Float("Trọng lượng")
     packing_spec = fields.Char("Quy cách đóng gói",size = 50)
@@ -16,7 +16,10 @@ class Hang_hoa(models.Model):
     product_no = fields.Char(string = 'Mã hàng hóa',required = True,copy = False,index = True)
     origin_country = fields.Many2one("dat.nuoc",string = "Nước sản xuất")
     manuafacturer = fields.Many2one("nha.san.xuat",string = "Hãng sản xuất")
-    don_vi = fields.Many2one("don.vi", string = "Đơn vị")
+    don_vi_tinh = fields.Many2one("don.vi", string = "Đơn vị")
+    don_vi = fields.One2many(
+        'don.vi.to','don_vi_to_id',string= "Danh sách đơn vị",select = True
+    )
     description = fields.Text("Mô tả")
     roa = fields.Char("Đường dùng" ,size=100)
     reg_number = fields.Char("Số đăng ký",size=12)
@@ -42,6 +45,15 @@ class Hang_hoa(models.Model):
         if vals.get('product_no', '/') == '/':
             vals['product_no'] = self.env['ir.sequence'].next_by_code('code.hanghoa') or '/'
         return super(Hang_hoa, self).create(vals)
+    # tính tiền theo đơn vị
+    @api.onchange('don_vi_tinh')
+    def _tien(self):
+        print("check")
+        for record in self:
+            record.sold_price = 0
+            for don_vi in record.don_vi:
+                if don_vi.name == record.don_vi_tinh.name:
+                    record.sold_price = don_vi.gia_ban
 
     @api.onchange('components')
     def _sum_price(self):
@@ -75,7 +87,13 @@ class Nha_san_xuat(models.Model):
 
 class Don_vi(models.Model):
     _name = "don.vi"
+    name = fields.Char("Tên đơn vị")
+class Don_vi_to(models.Model):
+    _name = "don.vi.to"
     name = fields.Char("Đơn vị")
+    gia_ban= fields.Float("Giá bán")
+    don_vi=fields.Many2one("don.vi",string='Đơn vị')
+    don_vi_to_id=fields.Many2one('hang.hoa',string="Hàng hóa")
 
 class Thuoc(models.Model):
     _name = "thuoc"
@@ -86,3 +104,4 @@ class Thuoc(models.Model):
     origin_country = fields.Many2one("dat.nuoc", string="Nước sản xuất")
     manuafacturer = fields.Many2one("nha.san.xuat", string="Hãng sản xuất")
     packing_spec = fields.Char("Quy cách đóng gói",size = 50)
+
