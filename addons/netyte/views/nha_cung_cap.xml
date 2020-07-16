@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    <record id="nhacungcap_form_view" model="ir.ui.view">
+            <field name="model">nha.cung.cap</field>
+            <field name="name">nhacungcap.form.view</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div>
+                            <group>
+                            <group>
+                                <field name="code" placeholder="Mã chi nhánh"/>
+                                <field name="name"/>
+                                <field name="phone_number" options="{'style-inline': true}"/>
+                            </group>
+                            <group>
+
+                                <field name="address"/>
+                                <field name="wards"/>
+                                <field name="province"/>
+                            </group>
+
+                            </group>
+                            <group>
+                            <group>
+                                     <field name="agency" options="{'style-inline': true}"/>
+                                     <field name="email" options="{'style-inline': true}"/>
+                                     <field name="company" options="{'style-inline': true}"/>
+                            </group>
+                            <group>
+                                     <field name="tax_code"/>
+                                     <field name="parent_id" options="{'style-inline': true}"/>
+                                     <field name="note"/>
+                            </group>
+                            </group>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+         <record id="nhacungcap_tree_view" model="ir.ui.view">
+             <field name="model">nha.cung.cap</field>
+            <field name="name">nhacungcap.tree.view</field>
+            <field name="arch" type="xml">
+                <tree string="Chi nhánh" default_order="create_date desc">
+                    <field name="code" optional="show"/>
+                    <field name="name" optional="show"/>
+                    <field name="address" optional="show" />
+                    <field name="phone_number" optional="show" />
+                    <field name="parent_id" optional="show" />
+                    <field name="tax_code" optional="show" />
+                    <field name="agency" optional="show" />
+                </tree>
+
+            </field>
+        </record>
+
+
+
+        <record id="action_nha_cung_cap" model="ir.actions.act_window">
+            <field name="name">Nhà cung cấp</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="target">current</field>
+            <field name="res_model">nha.cung.cap</field>
+
+        </record>
+
+
+
+
+        <menuitem id="menu_ncc" name="Nhà cung cấp"
+            sequence="10"
+            groups="base.group_user"
+            action="action_nha_cung_cap"
+            parent="netyte.menu_doitac"
+        />
+
+    </data>
+
+</odoo>

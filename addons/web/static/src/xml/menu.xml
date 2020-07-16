@@ -44,13 +44,17 @@
                 t-att-data-menu-xmlid="menu.xmlid"
                 t-attf-class="#{inNavbar ? '' : 'dropdown-item '}o_menu_entry_lvl_#{depth}"
                 data-toggle="collapse" data-target="#o_navbar_collapse.in">
-<!--                <span><t t-esc="menu.name"/></span>-->
-
                 <t t-if="menu.xmlid === 'netyte.menu_nhomhanghoa'">
                     <span><i class="fa fa-suitcase"></i> <t t-esc="menu.name"/> </span>
                 </t>
                 <t t-if="menu.xmlid ==='netyte.menu_hanghoa'">
                     <span><i class="fa fa-medkit"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                <t t-if="menu.xmlid ==='netyte.menu_donthuoc'">
+                    <span><i class="fa fa-file"></i> <t t-esc="menu.name"/> </span>
+                </t>
+                  <t t-if="menu.xmlid ==='netyte.menu_chinhanh'">
+                    <span><i class="fa fa-home"></i> <t t-esc="menu.name"/> </span>
                 </t>
 
 <!--                Giao dich-->
@@ -91,6 +95,9 @@
                  <t t-if="menu.xmlid ==='netyte.menu_bacsi'">
                     <span><i class="fa fa-user-md"></i> <t t-esc="menu.name"/> </span>
                 </t>
+                <t t-if="menu.xmlid ==='netyte.menu_ncc'">
+                    <span><i class="fa fa-user-md"></i> <t t-esc="menu.name"/> </span>
+                </t>
 
 <!--                Nhân viên-->
                    <t t-if="menu.xmlid ==='netyte.menu_nv'">
@@ -122,6 +129,12 @@
             <t t-if="menu.xmlid === 'netyte.menu_hanghoa'">
                     <span><i class="fa fa-medkit"></i> <t t-esc="menu.name"/> </span>
             </t>
+             <t t-if="menu.xmlid === 'netyte.menu_donthuoc'">
+                    <span><i class="fa fa-file"></i> <t t-esc="menu.name"/> </span>
+            </t>
+             <t t-if="menu.xmlid ==='netyte.menu_chinhanh'">
+                    <span><i class="fa fa-home"></i> <t t-esc="menu.name"/> </span>
+                </t>
 
 <!--            Giao dich-->
 
@@ -161,6 +174,9 @@
                  <t t-if="menu.xmlid ==='netyte.menu_bacsi'">
                     <span><i class="fa fa-user-md"></i> <t t-esc="menu.name"/> </span>
                 </t>
+                <t t-if="menu.xmlid ==='netyte.menu_ncc'">
+                    <span><i class="fa fa-user-md"></i> <t t-esc="menu.name"/> </span>
+                </t>
 
 <!--                Nhân viên-->
                 <t t-if="menu.xmlid ==='netyte.menu_nv'">
@@ -175,6 +191,7 @@
                  <t t-if="menu.xmlid ==='netyte.menu_thietlaphh'">
                     <span><i class="fa fa-usd"></i> <t t-esc="menu.name"/> </span>
                 </t>
+
         </div>
         <t t-foreach="menu.children" t-as="menu">
             <t t-call="Menu.link"/>

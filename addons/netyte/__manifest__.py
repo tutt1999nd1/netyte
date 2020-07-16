@@ -17,6 +17,9 @@
         'views/hang_hoa.xml',
         'views/listview_templates.xml',
         'views/menu.xml',
+        'views/don_thuoc.xml',
+        'views/chi_nhanh.xml',
+        'views/nha_cung_cap.xml',
 
     ],
     # 'qweb': ['static/src/xml/*.xml'],

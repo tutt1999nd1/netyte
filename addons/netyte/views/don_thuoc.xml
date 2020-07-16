@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    <record id="donthuoc_form_view" model="ir.ui.view">
+            <field name="model">don.thuoc</field>
+            <field name="name">donthuoc.form.view</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div>
+                            <group>
+                            <group>
+                                <field name="ma_don_thuoc" placeholder="Mã đơn thuốc"/>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="status" options="{'style-inline': true}"/>
+                                <field name="creator"/>
+                            </group>
+
+                            </group>
+                            <group>
+                                     <field name="note" options="{'style-inline': true}"/>
+                            </group>
+
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+         <record id="donthuoc_tree_view" model="ir.ui.view">
+             <field name="model">don.thuoc</field>
+            <field name="name">donthuoc.tree.view</field>
+            <field name="arch" type="xml">
+                <tree string="Đơn thuốc" default_order="create_date desc">
+                    <field name="ma_don_thuoc" optional="show"/>
+                    <field name="name" optional="show"/>
+                    <field name="status" optional="show" />
+                    <field name="note" optional="show" />
+                    <field name="creator" optional="show" />
+                </tree>
+
+            </field>
+        </record>
+
+
+
+        <record id="action_don_thuoc" model="ir.actions.act_window">
+            <field name="name">Mẫu đơn thuốc</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="target">current</field>
+            <field name="res_model">don.thuoc</field>
+
+        </record>
+
+
+
+
+        <menuitem id="menu_donthuoc" name="Mẫu đơn thuốc"
+            sequence="10"
+            groups="base.group_user"
+            action="action_don_thuoc"
+            parent="netyte.menu_danhmuc"
+        />
+
+    </data>
+
+</odoo>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    <record id="chinhanh_form_view" model="ir.ui.view">
+            <field name="model">chi.nhanh</field>
+            <field name="name">chinhanh.form.view</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div>
+                            <group>
+                            <group>
+                                <field name="code" placeholder="Mã chi nhánh"/>
+                                <field name="name"/>
+                                <field name="address" options="{'style-inline': true}"/>
+                            </group>
+                            <group>
+
+                                <field name="phone_number"/>
+                                <field name="fax_number"/>
+                                <field name="contact"/>
+                            </group>
+
+                            </group>
+                            <group>
+                            <group>
+                                     <field name="note" options="{'style-inline': true}"/>
+                                     <field name="default" options="{'style-inline': true}"/>
+                                     <field name="time_of_operation" options="{'style-inline': true}"/>
+                            </group>
+                            <group>
+                                     <field name="parent_id" options="{'style-inline': true}"/>
+                                     <field name="logo" widget="image"/>
+                            </group>
+                            </group>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+         <record id="chinhanh_tree_view" model="ir.ui.view">
+             <field name="model">chi.nhanh</field>
+            <field name="name">chinhanh.tree.view</field>
+            <field name="arch" type="xml">
+                <tree string="Chi nhánh" default_order="create_date desc">
+                    <field name="code" optional="show"/>
+                    <field name="name" optional="show"/>
+                    <field name="address" optional="show" />
+                    <field name="phone_number" optional="show" />
+                    <field name="default" optional="show" />
+                    <field name="parent_id" optional="show" />
+                    <field name="logo" optional="show" />
+                </tree>
+
+            </field>
+        </record>
+
+
+
+        <record id="action_chi_nhanh" model="ir.actions.act_window">
+            <field name="name">Chi nhánh</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="target">current</field>
+            <field name="res_model">chi.nhanh</field>
+
+        </record>
+
+
+
+
+        <menuitem id="menu_chinhanh" name="Chi nhánh"
+            sequence="10"
+            groups="base.group_user"
+            action="action_chi_nhanh"
+            parent="netyte.menu_danhmuc"
+        />
+
+    </data>
+
+</odoo>
