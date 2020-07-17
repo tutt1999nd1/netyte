@@ -26,6 +26,7 @@ class Hang_hoa(models.Model):
     active_ingredients = fields.Char("Hoạt chất",size = 200)
     ham_luong = fields.Char("Hàm lượng",size = 200)
     thuoc = fields.Many2one('thuoc', string ='Tên thuốc')
+    t = fields.Selection(selection=lambda self: self._compute_selection(), string="Test")
 
     type = fields.Selection([
         ('hanghoa', 'Hàng hóa'),
@@ -46,9 +47,19 @@ class Hang_hoa(models.Model):
             vals['product_no'] = self.env['ir.sequence'].next_by_code('code.hanghoa') or '/'
         return super(Hang_hoa, self).create(vals)
     # tính tiền theo đơn vị
+
+
+    @api.model
+    def _compute_selection(self):
+        don_vi=[('1','2'),('3','4')]
+
+        print(self.name)
+
+
+        return don_vi
+
     @api.onchange('don_vi_tinh')
     def _tien(self):
-        print("check")
         for record in self:
             record.sold_price = 0
             for don_vi in record.don_vi:
