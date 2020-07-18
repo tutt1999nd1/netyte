@@ -17,7 +17,6 @@ class Chi_nhanh(models.Model):
 
 class Tinh(models.Model):
     _name = "tinh"
-    code = fields.Char("Mã tỉnh")
     name = fields.Char("Tên tỉnh")
 
 class Huyen(models.Model):

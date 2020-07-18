@@ -88,7 +88,6 @@ class Hang_hoa(models.Model):
 
 class Dat_nuoc(models.Model):
     _name = "dat.nuoc"
-    code = fields.Char("Mã")
     name = fields.Char("Tên đất nước")
 
 class Nha_san_xuat(models.Model):

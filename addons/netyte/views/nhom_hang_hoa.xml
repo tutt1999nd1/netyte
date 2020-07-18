@@ -12,7 +12,7 @@
 <!--                            <i class="fa fa-info"></i>-->
                             <group>
                             <group>
-                                <field name="code" placeholder="Mã hàng hóa"/>
+<!--                                <field name="code" placeholder="Mã nhóm hàng hóa"/>-->
 
                                 <field name="name"/>
                             </group>
@@ -36,8 +36,9 @@
             <field name="name">thuoc.tree.view</field>
             <field name="arch" type="xml">
                 <tree string="Nhóm hàng hóa" default_order="create_date desc" multi_edit="1">
-                    <field name="code" optional="show"/>
+<!--                    <field name="code" optional="show"/>-->
                     <field name="name" optional="show"/>
+                    <field name="parent_id" optional="show"/>
                     <field name="status" optional="show" />
                 </tree>
 
@@ -58,7 +59,7 @@
               <field name="arch" type="xml">
                 <search string="Nhóm hàng hóa">
                     <field name="name" string="Nhóm hàng hóa"/>
-                    <field name="code" string="Mã nhóm"/>
+                    <field name="parent_id" string="Mã nhóm"/>
                      <field name="status" string="Trạng thái"/>
                 </search>
               </field>
