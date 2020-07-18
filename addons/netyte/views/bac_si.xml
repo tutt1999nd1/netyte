@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    <record id="bac_si_form_view" model="ir.ui.view">
+            <field name="model">bac.si</field>
+            <field name="name">bac.si.form.view</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div>
+                            <group>
+                            <group>
+                                <field name="doctor_id"/>
+                                <field name="name"/>
+                                <field name="sex" widget="radio"/>
+                                <field name="specialist"/>
+                                <field name="qualification"/>
+                                <field name="work_place"/>
+                                <field name="note"/>
+                            </group>
+                            <group>
+                                <field name="status" options="{'style-inline': true}" widget="radio"/>
+                                <field name="phone_number" options="{'style-inline': true}"/>
+                                <field name="email" options="{'style-inline': true}"/>
+                                <field name="address" options="{'style-inline': true}"/>
+                                <field name="wards" options="{'style-inline': true}"/>
+                                <field name="province" options="{'style-inline': true}"/>
+                                <field name="image" widget="image"/>
+                            </group>
+
+                            </group>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+         <record id="bac_si_tree_view" model="ir.ui.view">
+             <field name="model">bac.si</field>
+            <field name="name">bac.si.tree.view</field>
+            <field name="arch" type="xml">
+                <tree string="Bác sĩ" default_order="create_date desc">
+                    <field name="doctor_id" optional="show"/>
+                    <field name="name" optional="show"/>
+                    <field name="specialist" optional="show"/>
+                    <field name="address" optional="show" />
+                    <field name="phone_number" optional="show" />
+                    <field name="qualification" optional="show" />
+                    <field name="status" optional="show" />
+                </tree>
+
+            </field>
+        </record>
+
+
+
+        <record id="action_bacsi" model="ir.actions.act_window">
+            <field name="name">Bác sĩ</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="target">current</field>
+            <field name="res_model">bac.si</field>
+        </record>
+
+
+    </data>
+
+</odoo>

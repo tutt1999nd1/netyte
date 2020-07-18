@@ -7,7 +7,7 @@ class Nha_cung_cap(models.Model):
     address = fields.Text("Địa chỉ")
     phone_number = fields.Integer("Số điện thoại",required=True)
     email = fields.Char("Email")
-    wards = fields.Char("Phường/Xã")
+    wards = fields.Many2one('huyen',string="Phường/Xã")
     province = fields.Many2one('tinh', string="Tỉnh")
     company = fields.Char("Công ty")
     tax_code = fields.Char("Mã số thuế")

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    <record id="kho_form_view" model="ir.ui.view">
+            <field name="model">kho</field>
+            <field name="name">kho.form.view</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div>
+                            <group>
+                            <group>
+                                <field name="store_code"/>
+                                <field name="agency"/>
+                                <field name="name"/>
+
+
+                                <field name="default" options="{'style-inline': true}"/>
+                                <field name="active"/>
+                            </group>
+                            <group>
+                                <field name="address"/>
+                                <field name="phone_number"/>
+                                <field name="person_in_charge"/>
+                                <field name="note"/>
+                            </group>
+                            </group>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+         <record id="kho_tree_view" model="ir.ui.view">
+             <field name="model">kho</field>
+            <field name="name">kho.tree.view</field>
+            <field name="arch" type="xml">
+                <tree string="Kho" default_order="create_date desc">
+                    <field name="store_code" optional="show"/>
+                    <field name="name" optional="show"/>
+                    <field name="agency" optional="show"/>
+                    <field name="address" optional="show" />
+                    <field name="person_in_charge" optional="show" />
+                    <field name="phone_number" optional="show" />
+                    <field name="default" optional="show" />
+                    <field name="active" optional="show" />
+                </tree>
+
+            </field>
+        </record>
+
+
+
+        <record id="action_kho" model="ir.actions.act_window">
+            <field name="name">Kho</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="target">current</field>
+            <field name="res_model">kho</field>
+
+        </record>
+          <menuitem id="menu_kho" name="Kho hàng"
+                  sequence="10"
+                  groups="base.group_user"
+                  action="action_kho"
+                  parent="menu_danhmuc"
+        />
+        
+
+    </data>
+
+</odoo>

@@ -61,13 +61,13 @@
     <menuitem id="menu_khachhang" name="Khách hàng"
               sequence="10"
               groups="base.group_user"
-              action="action_nhomhanghoa"
+              action="action_khach_hanh"
               parent="netyte.menu_doitac"
     />
     <menuitem id="menu_nhacungcap" name="Nhà cung cấp"
               sequence="10"
               groups="base.group_user"
-              action="action_nhomhanghoa"
+              action="action_nha_cung_cap"
               parent="netyte.menu_doitac"
     />
     <menuitem id="menu_doitacgiaohang" name="Đối tác giao hàng"
@@ -79,7 +79,7 @@
     <menuitem id="menu_bacsi" name="Bác sĩ"
               sequence="10"
               groups="base.group_user"
-              action="action_nhomhanghoa"
+              action="action_bacsi"
               parent="netyte.menu_doitac"
     />
 

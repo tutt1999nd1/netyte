@@ -56,6 +56,9 @@
                   <t t-if="menu.xmlid ==='netyte.menu_chinhanh'">
                     <span><i class="fa fa-home"></i> <t t-esc="menu.name"/> </span>
                 </t>
+                <t t-if="menu.xmlid ==='netyte.menu_kho'">
+                    <span><i class="fa fa-home"></i> <t t-esc="menu.name"/> </span>
+                </t>
 
 <!--                Giao dich-->
 
@@ -133,6 +136,9 @@
                     <span><i class="fa fa-file"></i> <t t-esc="menu.name"/> </span>
             </t>
              <t t-if="menu.xmlid ==='netyte.menu_chinhanh'">
+                    <span><i class="fa fa-home"></i> <t t-esc="menu.name"/> </span>
+                </t>
+             <t t-if="menu.xmlid ==='netyte.menu_kho'">
                     <span><i class="fa fa-home"></i> <t t-esc="menu.name"/> </span>
                 </t>
 

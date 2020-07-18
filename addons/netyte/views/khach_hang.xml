@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    <record id="khachhang_form_view" model="ir.ui.view">
+            <field name="model">khach.hang</field>
+            <field name="name">khachhanh.form.view</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div>
+                            <group>
+                            <group>
+                                <field name="customer_type" widget="radio"/>
+                                <field name="customer_id"/>
+                                <field name="name"/>
+                                <field name="phone_number"/>
+                                <field name="date_of_birth"/>
+                                <field name="province"/>
+                                <field name="address" options="{'style-inline': true}"/>
+                                <field name="facebook"/>
+                            </group>
+                            <group>
+                                <field name="tax_code" options="{'style-inline': true}"/>
+                                <field name="sex" options="{'style-inline': true}" widget="radio"/>
+                                <field name="email" options="{'style-inline': true}"/>
+                                <field name="parent_id" options="{'style-inline': true}"/>
+                                <field name="note" options="{'style-inline': true}"/>
+                                <field name="status" options="{'style-inline': true}"/>
+                                <field name="logo" widget="image"/>
+                            </group>
+
+                            </group>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+         <record id="khachhang_tree_view" model="ir.ui.view">
+             <field name="model">khach.hang</field>
+            <field name="name">khachhang.tree.view</field>
+            <field name="arch" type="xml">
+                <tree string="Khách hàng" default_order="create_date desc">
+                    <field name="customer_id" optional="show"/>
+                    <field name="name" optional="show"/>
+                    <field name="customer_type" optional="show"/>
+                    <field name="address" optional="show" />
+                    <field name="phone_number" optional="show" />
+                    <field name="parent_id" optional="show" />
+                    <field name="tax_code" optional="show" />
+                </tree>
+
+            </field>
+        </record>
+
+
+
+        <record id="action_khach_hanh" model="ir.actions.act_window">
+            <field name="name">Khách hàng</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="target">current</field>
+            <field name="res_model">khach.hang</field>
+
+        </record>
+
+
+    </data>
+
+</odoo>

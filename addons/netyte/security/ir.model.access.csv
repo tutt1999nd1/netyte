@@ -9,7 +9,14 @@ access_don_vi_to,access_don_vi_to,model_don_vi_to,,1,1,1,1
 access_don_thuoc,access_doc_thuoc,model_don_thuoc,,1,1,1,1
 access_chi_nhanh,access_chi_nhanh,model_chi_nhanh,,1,1,1,1
 access_tinh,access_tinh,model_tinh,,1,1,1,1
+access_huyen,access_huyen,model_huyen,,1,1,1,1
 access_nha_cung_cap,access_nha_cung_cap,model_nha_cung_cap,,1,1,1,1
+access_khach_hang,access_khach_hang,model_khach_hang,,1,1,1,1
+access_kho,access_kho,model_kho,,1,1,1,1
+access_bac_si,access_bac_si,model_bac_si,,1,1,1,1
+access_chuyen_khoa,access_chuyen_khoa,model_chuyen_khoa,,1,1,1,1
+access_trinh_do,access_trinh_do,model_trinh_do,,1,1,1,1
+access_work_place,access_work_place,model_work_place,,1,1,1,1
 
 
 
