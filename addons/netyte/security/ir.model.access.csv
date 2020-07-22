@@ -17,6 +17,9 @@ access_bac_si,access_bac_si,model_bac_si,,1,1,1,1
 access_chuyen_khoa,access_chuyen_khoa,model_chuyen_khoa,,1,1,1,1
 access_trinh_do,access_trinh_do,model_trinh_do,,1,1,1,1
 access_work_place,access_work_place,model_work_place,,1,1,1,1
+access_nhan_vien,access_nhan_vien,model_nhan_vien,,1,1,1,1
+access_phong_ban,access_phong_ban,model_phong_ban,,1,1,1,1
+access_chuc_danh,access_chuc_danh,model_chuc_danh,,1,1,1,1
 
 
 

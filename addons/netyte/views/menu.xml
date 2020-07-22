@@ -93,7 +93,7 @@
     <menuitem id="menu_nv" name="Nhân viên"
               sequence="10"
               groups="base.group_user"
-              action="action_nhomhanghoa"
+              action="action_nhan_vien"
               parent="netyte.menu_nhanvien"
     />
     <menuitem id="menu_chamcong" name="Chấm công"

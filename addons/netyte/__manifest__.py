@@ -23,6 +23,7 @@
         'views/khach_hang.xml',
         'views/kho.xml',
         'views/bac_si.xml',
+        'views/nhan_vien.xml',
 
     ],
     # 'qweb': ['static/src/xml/*.xml'],

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+    <record id="nhan_vien_form_view" model="ir.ui.view">
+            <field name="model">nhan.vien</field>
+            <field name="name">nhan.vien.form.view</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div>
+                            <group>
+                            <group>
+                                <field name="employee_id"/>
+                                <field name="name"/>
+                                <field name="date_of_birth"/>
+                                <field name="sex" widget="radio" options="{'horizontal': true}"/>
+                                <field name="identity_card_number"/>
+                                <field name="department"/>
+                                <field name="professional_titles"/>
+                                <field name="note"/>
+                            </group>
+                            <group>
+                                <field name="agency"/>
+                                <field name="phone_number" options="{'style-inline': true}" widget="phone"/>
+                                <field name="email" options="{'style-inline': true}" widget="email"/>
+                                <field name="address" options="{'style-inline': true}"/>
+                                <field name="wards" options="{'style-inline': true}"/>
+                                <field name="province" options="{'style-inline': true}"/>
+                                <field name="avatar" widget="image"  class="oe_avatar"/>
+                            </group>
+
+                            </group>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+         <record id="nhan_vien_tree_view" model="ir.ui.view">
+             <field name="model">nhan.vien</field>
+            <field name="name">nhan.vien.tree.view</field>
+            <field name="arch" type="xml">
+                <tree string="Nhân viên" default_order="create_date desc">
+                    <field name="employee_id" optional="show"/>
+                    <field name="name" optional="show"/>
+                    <field name="date_of_birth"/>
+                    <field name="sex" optional="show"/>
+                    <field name="identity_card_number" optional="show"/>
+                    <field name="department" optional="show"/>
+                    <field name="professional_titles" optional="show"/>
+                    <field name="agency" optional="show"/>
+                    <field name="phone_number" optional="show"/>
+                    <field name="note"/>
+                </tree>
+
+            </field>
+        </record>
+
+
+
+        <record id="action_nhan_vien" model="ir.actions.act_window">
+            <field name="name">Nhân viên</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="target">current</field>
+            <field name="res_model">nhan.vien</field>
+        </record>
+
+         <record id="phong_ban_form_view" model="ir.ui.view">
+            <field name="model">phong.ban</field>
+            <field name="name">phong.ban.form.view</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div>
+                            <group>
+                                <field name="name"/>
+                                <field name="description"/>
+                                <field name="status" widget="radio" options="{'horizontal': true}"/>
+                            </group>
+
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="chuc_danh_form_view" model="ir.ui.view">
+            <field name="model">chuc.danh</field>
+            <field name="name">chuc.danh.form.view</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div>
+                            <group>
+                                <field name="name"/>
+                                <field name="description"/>
+                                <field name="status" widget="radio" options="{'horizontal': true}"/>
+                            </group>
+
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+
+
+</odoo>

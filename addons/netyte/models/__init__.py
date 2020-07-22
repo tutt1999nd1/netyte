@@ -6,3 +6,4 @@ from . import nha_cung_cap
 from . import khach_hang
 from . import kho
 from . import bac_si
+from . import nhan_vien
