@@ -50,7 +50,8 @@ class Hang_hoa(models.Model):
     @api.onchange('sold_price')
     def _quy_doi(self):
         for record in self.don_vi:
-            record.gia_ban = self.sold_price * record.quy_doi
+            if record.gia_ban !=0 :
+                record.gia_ban = self.sold_price * record.quy_doi
 
 
     @api.onchange('components')
@@ -96,8 +97,9 @@ class Don_vi_to(models.Model):
     @api.onchange('quy_doi')
     def _fuck(self):
         self.gia_ban = 0
-        if self.don_vi_to_id :
-            self.gia_ban = self.don_vi_to_id.sold_price *  self.quy_doi
+        if self.gia_ban == 0:
+            if self.don_vi_to_id :
+                self.gia_ban = self.don_vi_to_id.sold_price *  self.quy_doi
 
 
 
