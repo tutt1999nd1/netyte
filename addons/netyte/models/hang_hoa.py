@@ -5,7 +5,7 @@ class Hang_hoa(models.Model):
     on_hand = fields.Integer("Tồn kho")
     position = fields.Char("Vị trí")
     cost_price = fields.Float("Gía vốn")
-    sold_price = fields.Float("Giá bán",compute='_tien')
+    sold_price = fields.Float("Giá bán")
     sold_price_combo = fields.Float("Giá bán combo",compute='_sum_price')
     weight = fields.Float("Trọng lượng")
     packing_spec = fields.Char("Quy cách đóng gói",size = 50)
@@ -16,7 +16,7 @@ class Hang_hoa(models.Model):
     product_no = fields.Char(string = 'Mã hàng hóa',required = True,copy = False,index = True)
     origin_country = fields.Many2one("dat.nuoc",string = "Nước sản xuất")
     manuafacturer = fields.Many2one("nha.san.xuat",string = "Hãng sản xuất")
-    don_vi_tinh = fields.Many2one("don.vi", string = "Đơn vị")
+    don_vi_mac_dinh= fields.Char(string = 'Đơn vị')
     don_vi = fields.One2many(
         'don.vi.to','don_vi_to_id',string= "Danh sách đơn vị",select = True
     )
@@ -26,7 +26,6 @@ class Hang_hoa(models.Model):
     active_ingredients = fields.Char("Hoạt chất",size = 200)
     ham_luong = fields.Char("Hàm lượng",size = 200)
     thuoc = fields.Many2one('thuoc', string ='Tên thuốc')
-    t = fields.Selection(selection=lambda self: self._compute_selection(), string="Test")
 
     type = fields.Selection([
         ('hanghoa', 'Hàng hóa'),
@@ -48,23 +47,11 @@ class Hang_hoa(models.Model):
         return super(Hang_hoa, self).create(vals)
     # tính tiền theo đơn vị
 
+    @api.onchange('sold_price')
+    def _quy_doi(self):
+        for record in self.don_vi:
+            record.gia_ban = self.sold_price * record.quy_doi
 
-    @api.model
-    def _compute_selection(self):
-        don_vi=[('1','2'),('3','4')]
-
-        print(self.name)
-
-
-        return don_vi
-
-    @api.onchange('don_vi_tinh')
-    def _tien(self):
-        for record in self:
-            record.sold_price = 0
-            for don_vi in record.don_vi:
-                if don_vi.name == record.don_vi_tinh.name:
-                    record.sold_price = don_vi.gia_ban
 
     @api.onchange('components')
     def _sum_price(self):
@@ -102,8 +89,17 @@ class Don_vi_to(models.Model):
     _name = "don.vi.to"
     name = fields.Char("Đơn vị")
     gia_ban= fields.Float("Giá bán")
+    quy_doi= fields.Integer("Gía trị quy đổi")
     don_vi=fields.Many2one("don.vi",string='Đơn vị')
     don_vi_to_id=fields.Many2one('hang.hoa',string="Hàng hóa")
+
+    @api.onchange('quy_doi')
+    def _fuck(self):
+        self.gia_ban = 0
+        if self.don_vi_to_id :
+            self.gia_ban = self.don_vi_to_id.sold_price *  self.quy_doi
+
+
 
 class Thuoc(models.Model):
     _name = "thuoc"

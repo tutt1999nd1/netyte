@@ -17,8 +17,8 @@
                     <field name="origin_country" optional="show" />
                     <field name="manuafacturer" optional="show" />
                     <field name="description" optional="show" />
-                    <field name="don_vi_tinh" optional="show"/>
-                                        <field name="don_vi" optional="show"/>
+                    <field name="don_vi_mac_dinh" optional="show"/>
+                    <field name="don_vi" optional="show"/>
 
                 </tree>
             </field>
@@ -39,7 +39,7 @@
             <field name="arch" type="xml">
                 <form> <group>
                     <field name="name" />
-                    <field name="gia_ban" />
+                    <field name="quy_doi" />
                 </group></form>
 
 
@@ -69,12 +69,13 @@
                                         <field name="origin_country" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
                                         <field name="on_hand" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
                                         <field name="position"/>
-                                        <field name="don_vi_tinh" />
+                                        <field name="don_vi_mac_dinh" />
                                         <field name="don_vi" />
-                                        <field name="t" />
+
 
                                     </group>
                                     <group>
+                                        <field name="sold_price" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
                                         <field name="cost_price" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
                                         <field name="weight"/>
                                         <field name="packing_spec" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
