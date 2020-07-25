@@ -38,6 +38,7 @@
             <field name="name">don.vi.to.form.view</field>
             <field name="arch" type="xml">
                 <form> <group>
+
                     <field name="name" />
                     <field name="quy_doi" />
                     <field name="gia_ban" />
@@ -62,6 +63,7 @@
 <!--                                        -->
 <!--                                    </group>-->
                                     <group>
+                                        <field name="product_no" />
                                         <field name="name" />
                                         <field name="type"/>
                                         <field name="thuoc"  attrs="{'invisible':[('type','!=','thuoc')]}"/>

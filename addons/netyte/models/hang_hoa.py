@@ -11,9 +11,9 @@ class Hang_hoa(models.Model):
     packing_spec = fields.Char("Quy cách đóng gói",size = 50)
     sell_in_store = fields.Boolean("Bán trực tiếp")
     group = fields.Many2one('nhom.hang.hoa', string='Cấp cha')
-    product_no = fields.Char(string='Mã hàng hóa',required=True,copy=False,readonly=True,index=True,default='New')
+    product_no = fields.Char(string='Mã hàng hóa',copy=False,readonly=True,index=True,default='New')
     group = fields.Many2one('nhom.hang.hoa', string = 'Nhóm hàng hóa')
-    product_no = fields.Char(string = 'Mã hàng hóa',required = True,copy = False,index = True)
+    product_no = fields.Char(string = 'Mã hàng hóa',copy = False,index = True)
     origin_country = fields.Many2one("dat.nuoc",string = "Nước sản xuất")
     manuafacturer = fields.Many2one("nha.san.xuat",string = "Hãng sản xuất")
     don_vi_mac_dinh= fields.Char(string = 'Đơn vị')
@@ -42,7 +42,7 @@ class Hang_hoa(models.Model):
 
     @api.model
     def create(self, vals):
-        if vals.get('product_no', '/') == '/':
+        if not vals.get('product_no', False):
             vals['product_no'] = self.env['ir.sequence'].next_by_code('code.hanghoa') or '/'
         return super(Hang_hoa, self).create(vals)
     # tính tiền theo đơn vị
