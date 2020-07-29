@@ -54,7 +54,9 @@ class Hang_hoa(models.Model):
             record.sold_price_tree=record.sold_price
             if record.don_vi:
                 for record2 in record.don_vi:
-                    if record.don_vi_test.name == record2.name:
+                    print(record.don_vi_test.name)
+                    print(record2.don_vi.name)
+                    if record.don_vi_test.name == record2.don_vi.name:
                         record.sold_price_tree = record2.gia_ban
 
     @api.onchange('sold_price')
