@@ -9,7 +9,7 @@
                     <field name="product_no" optional="show"/>
                     <field name="name" optional="show"/>
                     <field name="type" optional="show"/>
-                    <field name="sold_price" optional="show"/>
+                    <field name="sold_price_tree" optional="show"/>
                     <field name="cost_price" optional="show" />
                     <field name="weight" optional="show" />
                     <field name="packing_spec" optional="show" />
@@ -17,8 +17,9 @@
                     <field name="origin_country" optional="show" />
                     <field name="manuafacturer" optional="show" />
                     <field name="description" optional="show" />
-                    <field name="don_vi_mac_dinh" optional="show"/>
+<!--                    <field name="don_vi_mac_dinh" optional="show"/>-->
                     <field name="don_vi" optional="show"/>
+                    <field name="don_vi_test" optional="show"/>
 
                 </tree>
             </field>
@@ -28,8 +29,9 @@
             <field name="name">don.vi.to.tree.view</field>
             <field name="arch" type="xml">
                 <tree string="Danh sách đơn vị" default_order="create_date desc">
-                    <field name="name" />
+                    <field name="don_vi" />
                     <field name="gia_ban" />
+                    <field name="don_vi"/>
                 </tree>
             </field>
         </record>
@@ -39,7 +41,7 @@
             <field name="arch" type="xml">
                 <form> <group>
 
-                    <field name="name" />
+                    <field name="don_vi" />
                     <field name="quy_doi" />
                     <field name="gia_ban" />
                 </group></form>
@@ -72,8 +74,9 @@
                                         <field name="origin_country" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
                                         <field name="on_hand" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
                                         <field name="position"/>
-                                        <field name="don_vi_mac_dinh" />
+<!--                                        <field name="don_vi_mac_dinh" />-->
                                         <field name="don_vi" />
+                                        <field name="don_vi_test" />
 
 
                                     </group>

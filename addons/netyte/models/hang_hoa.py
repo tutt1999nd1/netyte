@@ -6,6 +6,7 @@ class Hang_hoa(models.Model):
     position = fields.Char("Vị trí")
     cost_price = fields.Float("Gía vốn")
     sold_price = fields.Float("Giá bán")
+    sold_price_tree = fields.Float("Giá bán",compute='_tinh_tien')
     sold_price_combo = fields.Float("Giá bán combo",compute='_sum_price')
     weight = fields.Float("Trọng lượng")
     packing_spec = fields.Char("Quy cách đóng gói",size = 50)
@@ -17,6 +18,7 @@ class Hang_hoa(models.Model):
     origin_country = fields.Many2one("dat.nuoc",string = "Nước sản xuất")
     manuafacturer = fields.Many2one("nha.san.xuat",string = "Hãng sản xuất")
     don_vi_mac_dinh= fields.Char(string = 'Đơn vị')
+    don_vi_test = fields.Many2one("don.vi")
     don_vi = fields.One2many(
         'don.vi.to','don_vi_to_id',string= "Danh sách đơn vị",select = True
     )
@@ -46,6 +48,14 @@ class Hang_hoa(models.Model):
             vals['product_no'] = self.env['ir.sequence'].next_by_code('code.hanghoa') or '/'
         return super(Hang_hoa, self).create(vals)
     # tính tiền theo đơn vị
+    @api.onchange("sold_price")
+    def _tinh_tien(self):
+        for record in self:
+            record.sold_price_tree=record.sold_price
+            if record.don_vi:
+                for record2 in record.don_vi:
+                    if record.don_vi_test.name == record2.name:
+                        record.sold_price_tree = record2.gia_ban
 
     @api.onchange('sold_price')
     def _quy_doi(self):
