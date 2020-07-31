@@ -17,8 +17,8 @@ class Hang_hoa(models.Model):
     product_no = fields.Char(string = 'Mã hàng hóa',copy = False,index = True)
     origin_country = fields.Many2one("dat.nuoc",string = "Nước sản xuất")
     manuafacturer = fields.Many2one("nha.san.xuat",string = "Hãng sản xuất")
-    don_vi_mac_dinh= fields.Char(string = 'Đơn vị')
-    don_vi_test = fields.Many2one("don.vi")
+    don_vi_mac_dinh= fields.Char(string = 'Đơn vị mặc định')
+    don_vi_ban = fields.Many2one("don.vi", string="Đơn vị bán")
     don_vi = fields.One2many(
         'don.vi.to','don_vi_to_id',string= "Danh sách đơn vị",select = True
     )
@@ -54,9 +54,9 @@ class Hang_hoa(models.Model):
             record.sold_price_tree=record.sold_price
             if record.don_vi:
                 for record2 in record.don_vi:
-                    print(record.don_vi_test.name)
+                    print(record.don_vi_ban.name)
                     print(record2.don_vi.name)
-                    if record.don_vi_test.name == record2.don_vi.name:
+                    if record.don_vi_ban.name == record2.don_vi.name:
                         record.sold_price_tree = record2.gia_ban
 
     @api.onchange('sold_price')

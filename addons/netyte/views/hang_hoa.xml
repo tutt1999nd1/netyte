@@ -16,10 +16,10 @@
                     <field name="sell_in_store" optional="show" />
                     <field name="origin_country" optional="show" />
                     <field name="manuafacturer" optional="show" />
-                    <field name="description" optional="show" />
+<!--                    <field name="description" optional="show" />-->
 <!--                    <field name="don_vi_mac_dinh" optional="show"/>-->
-                    <field name="don_vi" optional="show"/>
-                    <field name="don_vi_test" optional="show"/>
+<!--                    <field name="don_vi" optional="show"/>-->
+                    <field name="don_vi_ban" optional="show"/>
 
                 </tree>
             </field>
@@ -74,14 +74,15 @@
                                         <field name="origin_country" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
                                         <field name="on_hand" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
                                         <field name="position"/>
-<!--                                        <field name="don_vi_mac_dinh" />-->
+                                        <field name="sold_price" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
+                                        <field name="don_vi_mac_dinh" />
                                         <field name="don_vi" />
-                                        <field name="don_vi_test" />
+                                        <field name="don_vi_ban" />
 
 
                                     </group>
                                     <group>
-                                        <field name="sold_price" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
+<!--                                        <field name="sold_price" attrs="{'invisible':[('type','!=','hanghoa')]}"/>-->
                                         <field name="cost_price" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
                                         <field name="weight"/>
                                         <field name="packing_spec" attrs="{'invisible':[('type','!=','hanghoa')]}"/>
