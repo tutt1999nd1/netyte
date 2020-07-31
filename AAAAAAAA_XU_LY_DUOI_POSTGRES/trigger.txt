@@ -1,0 +1,17 @@
+CREATE FUNCTION them_don_vi_mac_dinh() RETURNS trigger AS $them_don_vi_mac_dinh$
+DECLARE
+   counter    integer ;
+   time_now TIMESTAMP  := current_timestamp(6);
+ BEGIN
+ 	counter :=nextval('don_vi_id_seq');
+	INSERT INTO don_vi(id, name, create_uid,create_date, write_uid, write_date)
+	VALUES (counter, NEW.don_vi_mac_dinh, NEW.create_uid,time_now,  NEW.write_uid, time_now);
+ 
+ 	INSERT INTO don_vi_to( don_vi_to_id, don_vi, gia_ban, quy_doi,create_uid,create_date, write_uid, write_date)
+	VALUES(NEW.id, counter, NEW.sold_price, 1, NEW.create_uid,time_now,  NEW.write_uid, time_now);
+ RETURN NEW;
+ 
+ END;
+$them_don_vi_mac_dinh$ LANGUAGE plpgsql;
+CREATE TRIGGER them_don_vi_mac_dinh AFTER INSERT ON hang_hoa
+    FOR EACH ROW EXECUTE PROCEDURE them_don_vi_mac_dinh();
